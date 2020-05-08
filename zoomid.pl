@@ -43,12 +43,18 @@ while (<>)
     }
     next unless $state ;
  
+     if ( /^Subject:/ ) {
+        say "\n==================================================";
+    	print;
+    	next;
+    }
      if ( /Topic:|Time:/ ) {
+        say '' ;
     	print;
     	next;
     }
    if ( /Meeting ID:|https/ ) {
-   	    say '' ;
+   	    #say '' ;
     	print;
     	next;
     }
