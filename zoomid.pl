@@ -20,6 +20,8 @@ https://us02web.zoom.us/j/87048507656
 
 Meeting ID: 870 4850 7656
 
+Content-Type: text/plain; charset="UTF-8"
+Content-Type: text/html; charset="UTF-8"
 
 =cut
 
@@ -29,8 +31,18 @@ use feature ":5.10" ;
 use Data::Dumper ;
 
 say '' ;
+#TODO Kludge
+push @ARGV, '/home/andrew/.thunderbird/98eg4dmp.default/ImapMail/mail.aa.net.uk/INBOX.sbd/Meet';
+my $state = 1 ;
 while (<>)
 {
+    if ( m|Content-Type: text/(\w*)| ) {
+        #say $1 ;
+        $state = ($1 eq 'plain' ) ;
+        #say $state ;
+    }
+    next unless $state ;
+ 
      if ( /Topic:|Time:/ ) {
     	print;
     	next;
