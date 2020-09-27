@@ -12,7 +12,7 @@ say "hello" ;
 while (<>) {
   # captital word before quotes
   #  ABC"text in quotes" extracts text as a node
-  if ( / ([A-Z]+) " ( [^"]+ ) " /x) {
+  if ( / ([A-Z]+) ( " [^"]+ " ) /x) {
     my $name = $1 ;
     my $text = $2 ; ## or maybe inc quotes
     say "Found $name $text"
