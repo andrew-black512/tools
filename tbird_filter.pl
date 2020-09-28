@@ -23,16 +23,27 @@ my $diag = 0 ; # make configurable if needed
 my $version = <> ;
 my $loging = <> ;
 
+my %rule ;
 while (<>) {
   my ($verb,$value) = split /=/ ;
+  $value =~ s/"//g ;
   say "$verb , $value " if $diag  ;
-  if ($verb eq 'name') {
+  if ($verb eq 'name') {  # starts a new rule
     say ;
     say "# $value" ; # name as a markdown title
-#  } elsif () {
-    # elsif...
+  } elsif ($verb eq 'action') {
+    $rule{'action'} = $value ;
+  } elsif ($verb eq 'actionValue') {
+    $rule{'actionValue'} = $value ;
+    print_action(\%rule) ;
   } else {
     print "    $_" ;
   }
 
+}
+
+sub print_action  {
+  my $rule = shift ;
+  #say Dumper \$rule ;
+  say $$rule {'action'} ;
 }
