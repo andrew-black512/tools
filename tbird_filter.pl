@@ -19,7 +19,20 @@ use Data::Dumper ;
 use File::Spec ;
 
 push @ARGV,'/home/andrew/.thunderbird/98eg4dmp.default/ImapMail/mail.aa.net.uk/msgFilterRules.dat' ;
+my $diag = 0 ; # make configurable if needed
+my $version = <> ;
+my $loging = <> ;
 
 while (<>) {
-  print ;
+  my ($verb,$value) = split /=/ ;
+  say "$verb , $value " if $diag  ;
+  if ($verb eq 'name') {
+    say ;
+    say "# $value" ; # name as a markdown title
+#  } elsif () {
+    # elsif...
+  } else {
+    print "    $_" ;
+  }
+
 }
