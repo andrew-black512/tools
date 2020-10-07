@@ -29,9 +29,9 @@ my %bus_data ;
 say Dumper \@wanted_buses ;
 while (<>) {
   if (/Routes/) {
-    $state = 'E' if /extra/ ;
-    $state = 'M' if /0730/ ;
-    $state = 'A' if /1430/ ;
+    $state = 'Extra ' if /extra/ ;
+    $state = 'Mor ' if /0730/ ;
+    $state = 'Aft ' if /1430/ ;
     #say $state
   } else {
 
