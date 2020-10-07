@@ -24,7 +24,7 @@ use Data::Dumper ;
 use File::Spec ;
 
 my $state ;
-my @wanted_buses = (484,176,1) ;
+my @wanted_buses = (40,176,185,484,) ;
 my %bus_data ;
 say Dumper \@wanted_buses ;
 while (<>) {
@@ -34,9 +34,12 @@ while (<>) {
     $state = 'A' if /1430/ ;
     #say $state
   } else {
-    my $busno =484 ; #TODO loop
-    if (/\b484\b/) {
-       $bus_data {$busno} .= $state  ;
+
+    for my $busno ( @wanted_buses) {
+       if (/\b$busno\b/) {
+           #say "found $busno" ;
+           $bus_data {$busno} .= $state  ;
+      }
     }
   }
 }
