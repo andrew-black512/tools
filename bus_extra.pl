@@ -24,12 +24,18 @@ use Data::Dumper ;
 use File::Spec ;
 
 my $state ;
+my @wanted_buses = (484,176,1) ;
+say Dumper \@wanted_buses ;
 while (<>) {
   if (/Routes/) {
     $state = 'E' if /extra/ ;
-    say $state 
+    $state = 'M' if /0730/ ;
+    $state = 'A' if /1430/ ;
+    #say $state
   } else {
-    # else...
+    if (/\b484\b/) {
+       say "Found $state"  
+    }
   }
   # body. ..
 }
