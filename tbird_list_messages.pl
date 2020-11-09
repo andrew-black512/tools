@@ -36,7 +36,11 @@ foreach my $folder ( @folders ) {
    my $filename = File::Spec->catfile ( $tbird_local_dir , $folder  ) ;
    open my $F, '<', $filename or  die "Can't find $filename" ;
    while (<$F>) {
-       # To: comes first so inednt subject more for clarity
+       #start of new message. TODO print a line per message
+       # This is a From seperator, not a header with :
+       say '' if /^From[^:]/ ;
+
+       # To: comes first so indent subject more for clarity
        print "   $_"  if /To:/ ;
        print "     $_"  if /Subject:/ ;
    }
