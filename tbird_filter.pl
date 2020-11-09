@@ -25,19 +25,22 @@ my $loging = <> ;
 
 my %rule ;
 while (<>) {
+  chomp ;
   my ($verb,$value) = split /=/ ;
   $value =~ s/"//g ;
   say "$verb , $value " if $diag  ;
   if ($verb eq 'name') {  # starts a new rule
-    say ;
+    say '' ;
     say "# $value" ; # name as a markdown title
+  } elsif ($verb eq 'enabled') {
+    # ignore
   } elsif ($verb eq 'action') {
     $rule{'action'} = $value ;
   } elsif ($verb eq 'actionValue') {
     $rule{'actionValue'} = $value ;
     print_action(\%rule) ;
   } else {
-    print "    $_" ;
+    say "    $_" ;
   }
 
 }
@@ -45,5 +48,12 @@ while (<>) {
 sub print_action  {
   my $rule = shift ;
   #say Dumper \$rule ;
-  say $$rule {'action'} ;
+  my $action = $$rule {'action'} ;
+  my $folder = $$rule {'actionValue'} ;
+  $folder =~ s|imap://|| ;
+
+  my @folder_parts = split '/', $folder ;
+  shift @folder_parts ;
+  my $folder_pretty =  join ' / ', @folder_parts ;
+  printf ( "    %-20s %s\n", $action, $folder_pretty  ) ;
 }
