@@ -6,6 +6,11 @@ tbird.pl - list Thunderbird drafts
 
 =head1 SYNOPSIS
 
+Lists messages in specific thunderbird folders.
+has to be in the top dir profile
+
+TODO - make dir configurable
+
 =head1 DESCRIPTION
 
 =head1 TO DO
@@ -18,7 +23,7 @@ use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
 
-my $tbird_local_dir = 'C:\Users\andrew\AppData\Roaming\Thunderbird\Profiles\v6lq35j1.default\Mail\Local Folders' ;
+my $tbird_local_dir = 'Mail/Local Folders' ; #TODO best was to set this
 my @folders =  (
     #'Drafts-1' ,
     'Unsent Messages'      # Outbox
