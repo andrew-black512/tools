@@ -36,7 +36,9 @@ foreach my $folder ( @folders ) {
    my $filename = File::Spec->catfile ( $tbird_local_dir , $folder  ) ;
    open my $F, '<', $filename or  die "Can't find $filename" ;
    while (<$F>) {
-       print "   $_"  if /Subject:/ ;
+       # To: comes first so inednt subject more for clarity
+       print "   $_"  if /To:/ ;
+       print "     $_"  if /Subject:/ ;
    }
    say '' ;
 }
