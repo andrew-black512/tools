@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w 
+#!/usr/bin/perl -w
 
 =head1 NAME
 
@@ -20,8 +20,8 @@ use File::Spec ;
 
 my $tbird_local_dir = 'C:\Users\andrew\AppData\Roaming\Thunderbird\Profiles\v6lq35j1.default\Mail\Local Folders' ;
 my @folders =  (
-    'Drafts' ,               
-    'Unsent Messages'      # Outbox  
+    #'Drafts-1' ,
+    'Unsent Messages'      # Outbox
     ) ;
 
 say '' ;
@@ -35,5 +35,3 @@ foreach my $folder ( @folders ) {
    }
    say '' ;
 }
-
-
