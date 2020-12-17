@@ -18,3 +18,12 @@ use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
 
+my $select = shift  ;
+my $me = "Andrew" ;
+while (<>) {
+  # 10:05:15 From Andrew Black : I have done one to my satisfcation...
+   if ( /From (.*) : (.*)/) {
+     my $name = $1 ;
+     say $name ;
+   }
+}
