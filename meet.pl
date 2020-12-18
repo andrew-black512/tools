@@ -21,3 +21,12 @@ use File::Spec ;
 my $file = shift ;
 my $fullfile = $ENV{"MEET"}. "/" . $file ;
 open (my $FH, $fullfile ) or die "cant find $fullfile" ;
+my $url ;
+while (<$FH>) {
+  if (/https.*zoom/) {
+    chomp ;
+    $url = $_ ;
+  }
+}
+say $url ;
+system "firefox $url" ;
