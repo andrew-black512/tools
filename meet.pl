@@ -18,3 +18,6 @@ use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
 
+my $file = shift ;
+my $fullfile = $ENV{"MEET"}. "/" . $file ;
+open (my $FH, $fullfile ) or die "cant find $fullfile" ;
