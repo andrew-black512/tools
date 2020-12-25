@@ -18,15 +18,18 @@ use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
 
+# poss config
+my $domain = 'zoom|whereby' ;
+
 my $file = shift ;
 my $fullfile = $ENV{"MEET"}. "/" . $file ;
 open (my $FH, $fullfile ) or die "cant find $fullfile" ;
 my $url ;
 while (<$FH>) {
-  if (/https.*zoom/) {
+  if (/https.*$domain/) {
     chomp ;
     $url = $_ ;
   }
 }
 say $url ;
-system "firefox $url" ;
+#system "firefox $url" ;
