@@ -32,4 +32,4 @@ while (<$FH>) {
   }
 }
 say $url ;
-#system "firefox $url" ;
+system "firefox $url" ;
