@@ -22,7 +22,10 @@ use File::Spec ;
 my $domain = 'zoom|whereby' ;
 
 my $file = shift ;
+my $mode = shift ;
+
 my $fullfile = $ENV{"MEET"}. "/" . $file ;
+my $notefile = $ENV{"MEET"}. "/notes/" . $file ;
 open (my $FH, $fullfile ) or die "cant find $fullfile" ;
 my $url ;
 while (<$FH>) {
@@ -32,4 +35,7 @@ while (<$FH>) {
   }
 }
 say $url ;
-system "firefox $url" ;
+if ($mode ne 'q') {
+    system "firefox $url" ;
+}
+system "atom $notefile" ;
