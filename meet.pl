@@ -22,9 +22,9 @@ use File::Spec ;
 my $domain = 'zoom|whereby' ;
 
 my $file = shift ;
-my $mode = shift ;
+my $mode = shift // '' ;
 
-my $fullfile = $ENV{"MEET"}. "/" . $file ;
+my $fullfile = $ENV{"MEET"}. "/meetids/" . $file ;
 my $notefile = $ENV{"MEET"}. "/notes/" . $file ;
 open (my $FH, $fullfile ) or die "cant find $fullfile" ;
 my $url ;
