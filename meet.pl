@@ -26,7 +26,7 @@ my $mode = shift // '' ;
 
 my $fullfile = $ENV{"MEET"}. "/meetids/" . $file ;
 my $notefile = $ENV{"MEET"}. "/notes/" . $file ;
-open (my $FH, $fullfile ) or die "cant find $fullfile" ;
+open (my $FH, $fullfile ) or do_help($ENV{"MEET"}. "/meetids/") ;
 my $url ;
 while (<$FH>) {
   if (/https.*$domain/) {
@@ -39,3 +39,10 @@ if ($mode ne 'q') {
     system "firefox $url" ;
 }
 system "atom $notefile" ;
+
+sub do_help {
+  my $meet_dir = shift ;
+   say "not found" ;
+   system "ls -lrt $meet_dir" ;
+   exit ;
+}
