@@ -41,9 +41,10 @@ if ($mode ne 'q') {
 ## TODO - mayb check file exists
 ##system "atom $notefile" ;
 
+#-----------------------------------------
 sub do_help {
   my $meet_dir = shift ;
-   say "not found" ;
+   say "Meet file not found. Try" ;
    system "ls -lrt $meet_dir" ;
    exit ;
 }
