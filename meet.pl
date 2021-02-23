@@ -38,7 +38,8 @@ say $url ;
 if ($mode ne 'q') {
     system "firefox $url" ;
 }
-system "atom $notefile" ;
+## TODO - mayb check file exists
+##system "atom $notefile" ;
 
 sub do_help {
   my $meet_dir = shift ;
