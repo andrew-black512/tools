@@ -19,7 +19,7 @@ use Data::Dumper ;
 use File::Spec ;
 
 # poss config
-my $domain = 'zoom|whereby' ;
+my $domain = 'zoom|whereby|teams\.microsoft' ;
 
 my $file = shift ;
 my $mode = shift // '' ;
