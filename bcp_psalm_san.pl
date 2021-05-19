@@ -27,26 +27,24 @@ aim
 - count nmber of bars
 
 Done
- - starts quartes on new line \: -> nl 
+ - starts quartes on new line \: -> nl
 
- 
-=cut 
+
+=cut
 
 print "test\n" ;
 
 
-#config 
+#config
     # serves 2 purposes - mimics the verse number and indents to 2nd and 4th quarter
-    my $quarter_prefix = "    " ;
-    my $apost_reg = qr/[']/ ;
-while (<> ) 
+    my $quarter_prefix = "\t\t" ;
+    my $apost_reg = qr/[=]/ ;
+while (<> )
 {
-        # TODO - add extra cases in correct order. Spacing " | " is a bodge!	
-	s/ $apost_reg / | /xg ;
-
-	s/:\s*/:\n$quarter_prefix/x ;
+        # TODO - add extra cases in correct order. Spacing " | " is a bodge!
+	s/ \s* $apost_reg \s* / | /xg ;
+  s/ (\d+) /$1\t/x ; #TODO match with $quarter_prefix
+	###s/:\s*/:\n$quarter_prefix/x ;
 
 	print $_ ;
-} 
-
-
+}
