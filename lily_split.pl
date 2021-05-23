@@ -19,8 +19,8 @@ use Data::Dumper ;
 use File::Spec ;
 
 my $note = qr/[a-g]rR/ ; # TODO others
-my $noteadd = qr/
+my $noteadd = qr/ ([ei]s)? [',']* /x ;
 while (<>) {
-
+  s/ $note / | /g ;
   # body...
 }
