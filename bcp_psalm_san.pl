@@ -32,9 +32,6 @@ Done
 
 =cut
 
-print "test \xB7\n" ;
-
-
 #config
     # serves 2 purposes - mimics the verse number and indents to 2nd and 4th quarter
     my $quarter_prefix = "\t\t" ;
@@ -49,6 +46,10 @@ while (<> )
   ###s/:\s*/:\n$quarter_prefix/x ;
   # centre dot
   s/\s* \# \s*/ · /xg ;
+
+  # ignored commas
+  s/ \s* ,_ \s* / /xg ;
+
 
 	print $_ ;
 }
