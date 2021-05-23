@@ -32,7 +32,7 @@ Done
 
 =cut
 
-print "test\n" ;
+print "test \xB7\n" ;
 
 
 #config
@@ -45,6 +45,7 @@ while (<> )
 	s/ \s* $apost_reg \s* / | /xg ;
   s/ (\d+) /$1\t/x ; #TODO match with $quarter_prefix
 	###s/:\s*/:\n$quarter_prefix/x ;
+  s/\s* \# \s*/ · /xg ;
 
 	print $_ ;
 }
