@@ -38,13 +38,16 @@ print "test \xB7\n" ;
 #config
     # serves 2 purposes - mimics the verse number and indents to 2nd and 4th quarter
     my $quarter_prefix = "\t\t" ;
-    my $apost_reg = qr/[=]/ ;
+    my $apostrophe_reg = qr/[=]/ ;
 while (<> )
 {
         # TODO - add extra cases in correct order. Spacing " | " is a bodge!
-	s/ \s* $apost_reg \s* / | /xg ;
+  s/  (?<=\w)  $apostrophe_reg (?=\w) /-|/xg ;
+  s/ \s* $apostrophe_reg \s* / | /xg ;
   s/ (\d+) /$1\t/x ; #TODO match with $quarter_prefix
-	###s/:\s*/:\n$quarter_prefix/x ;
+  ### TODO is split on ":" a different program
+  ###s/:\s*/:\n$quarter_prefix/x ;
+  # centre dot
   s/\s* \# \s*/ · /xg ;
 
 	print $_ ;
