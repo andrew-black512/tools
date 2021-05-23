@@ -18,9 +18,13 @@ use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
 
-my $note = qr/[a-g]rR/ ; # TODO others
+my $note = qr/[a-grR]/ ; # TODO others
 my $noteadd = qr/ ([ei]s)? [',']* /x ;
 while (<>) {
-  s/ $note / | /g ;
-  # body...
+  if (!/^%/) {
+    say 'hell' ;
+    s/ (?<=$note) / | /xg ;
+  }
+
+  print ;
 }
