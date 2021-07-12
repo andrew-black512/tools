@@ -24,13 +24,13 @@ use Data::Dumper ;
 use File::Spec ;
 
 my $state ;
-my @wanted_buses = (40,176,185,484,) ;
+my @wanted_buses = (40,176,185,484,343) ;
 my %bus_data ;
 say Dumper \@wanted_buses ;
 while (<>) {
   if (/Routes/) {
     $state = 'Extra ' if /extra/ ;
-    $state = 'Mor ' if /0730/ ;
+    $state = 'Morn ' if /0730/ ;
     $state = 'Aft ' if /1430/ ;
     #say $state
   } else {
