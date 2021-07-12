@@ -21,14 +21,15 @@ use File::Spec ;
 
 =head1
 
-It has two fumctions
- - dpwmladed fro BCP and | added
- - semt by chor amd wi;; jave assprt,emt of '| etc
-
+It has two functions
+        - dowmloaded from CoE BCP and | added
+        - sent by choir amd wi;; jave assortmemt of '| etc
+       (maybe  need to separate  these)
+       
 aim
  - change ' to |       ******
  - get ' in words into hyphens
-- count nmber of bars
+ - count number of bars
 
 Done
  - starts quartes on new line \: -> nl
