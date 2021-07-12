@@ -9,7 +9,9 @@ class Array
 end
 def comma_join_test
   puts ['a'].comma_join
-  #  ) # %w/a/ )
+  puts (%w/a b c/ ).comma_join
+  puts [].comma_join
+
 end
 
 #---------------------------------------------------------------------
