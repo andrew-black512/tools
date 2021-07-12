@@ -23,8 +23,14 @@ class PageRange
     @range = [ s..e ]
   end
 
-  def print_odd_pages (start_page, finish_page)
-    puts "x"
+  def print_odd_pages
+    pp @range
+  end
+end
+class TestPageRange
+  def initialize
+    pr = PageRange.new( 1,10 )
+    pr.print_odd_pages
   end
 end
 #---------------------------------------------------------------------
@@ -37,3 +43,4 @@ finish_page = ARGV.shift
 puts "#{start_page} #{finish_page} "
 
 #comma_join_test
+TestPageRange.new
