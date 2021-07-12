@@ -3,8 +3,8 @@
 #---------------------------------------------------------------------
 #potential lib
 class Array
-  def comma_join( arr )
-    arr.join(',')
+  def comma_join  #( arr )
+    self.join(',')
   end
 end
 def comma_join_test
