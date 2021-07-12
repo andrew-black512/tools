@@ -26,13 +26,10 @@ class PageRange
   end
 
   def print_odd_pages
-    #@range = ()
-    puts "xxxx"
-    puts @range.class
     raa = @range.step(2).to_a
-    puts raa.class
     pp raa.comma_join
   end
+  # these maybe useful, but more to demonstarte how to get the bounds of the range
   def start_page
     @range.first
   end
