@@ -33,12 +33,19 @@ class PageRange
     puts raa.class
     pp raa.comma_join
   end
+  def start_page
+    @range.first
+  end
+  def finish_page
+    @range.last
+  end
 end
 
 class TestPageRange
   def initialize
     pr = PageRange.new( 1,10 )
     pr.print_odd_pages
+    puts "start " + pr.start_page.to_s
   end
 end
 #---------------------------------------------------------------------
