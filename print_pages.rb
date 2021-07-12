@@ -18,15 +18,23 @@ end
 class PageRange
   attr :range
   attr :start_page
+  attr :finish_page
 
   def initialize( s, e )
-    @range = [ s..e ]
+    @start_page = s
+    @range = (s..e)
   end
 
   def print_odd_pages
-    pp @range
+    #@range = ()
+    puts "xxxx"
+    puts @range.class
+    raa = @range.step(2).to_a
+    puts raa.class
+    pp raa.comma_join
   end
 end
+
 class TestPageRange
   def initialize
     pr = PageRange.new( 1,10 )
