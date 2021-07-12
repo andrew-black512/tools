@@ -46,6 +46,7 @@ class TestPageRange
     pr = PageRange.new( 1,10 )
     pr.print_odd_pages
     puts "start " + pr.start_page.to_s
+    puts "end " + pr.finish_page.to_s
   end
 end
 #---------------------------------------------------------------------
