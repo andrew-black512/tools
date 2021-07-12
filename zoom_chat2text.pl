@@ -25,10 +25,9 @@ while (<>) {
    if ( /From (.*) : (.*)/) {
      my $name = $1 ;
      my $text = $2 ;
-     say $name ;
      my $prefix = "# " ; #them
      $prefix = '' if $name =~ /$me/ ;
-     print "$prefix$text" ;
+     say "$prefix$text" ;
 
    }
 }
