@@ -36,6 +36,11 @@ push @ARGV, '/home/andrew/.thunderbird/98eg4dmp.default/ImapMail/mail.aa.net.uk/
 my $state = 1 ;
 while (<>)
 {
+    
+    if ( /^From -/ ) {  #TODO a kludge - time to time probkem
+        $state = 1 ;
+        say "\n==================================================";        
+    }
     if ( m|Content-Type: text/(\w*)| ) {
         #say $1 ;
         $state = ($1 eq 'plain' ) ;
@@ -44,7 +49,7 @@ while (<>)
     next unless $state ;
  
      if ( /^Subject:/ ) {
-        say "\n==================================================";
+
     	print;
     	next;
     }
