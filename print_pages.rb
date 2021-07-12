@@ -15,7 +15,22 @@ def comma_join_test
 end
 
 #---------------------------------------------------------------------
+class PageRange
+  attr :range
+  attr :start_page
 
+  def initialize( s, e )
+    @range = [ s..e ]
+  end
+
+  def print_odd_pages (start_page, finish_page)
+    puts "x"
+  end
+end
+#---------------------------------------------------------------------
+
+# Main
+# get args
 start_page = ARGV.shift
 finish_page = ARGV.shift
 ## TODO: check arg (raise error)
