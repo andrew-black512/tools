@@ -17,8 +17,6 @@ end
 #---------------------------------------------------------------------
 class PageRange
   attr :range
-  attr :start_page
-  attr :finish_page
 
   def initialize( s, e )
     @start_page = s
