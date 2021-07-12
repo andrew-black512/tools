@@ -21,4 +21,4 @@ finish_page = ARGV.shift
 ## TODO: check arg (raise error)
 puts "#{start_page} #{finish_page} "
 
-comma_join_test
+#comma_join_test
