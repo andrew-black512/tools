@@ -1,0 +1,23 @@
+20:32:03 From Andrew Black To Everyone : When you first SAVE it creates a directo under ~/Documents/Zoom
+20:32:54 From Andrew Black To Everyone : File is called  meeting_saved_chat.txt
+20:33:34 From Andrew Black To Lesley Black(Privately) : only to lesley
+20:34:03 From Andrew Black To Lesley Black(Privately) : more to lesley
+20:35:02 From Lesley Black To Andrew Black(Privately) : Orange Penguin is talking rubbish
+20:36:02 From Andrew Black To Lesley Black(Privately) : <op>I resent that </op>
+20:36:14 From Lesley Black To Andrew Black(Privately) : It was only an example
+20:37:01 From Andrew Black To Everyone : Hello everyone
+20:37:19 From Andrew Black To Everyone : hello again
+20:37:43 From Andrew Black To Everyone : hello
+20:37:51 From Lesley Black To Everyone : Salvation is nearer than when we first believed - discuss
+20:39:19 From Lesley Black To Everyone : lack of inspiration
+20:39:50 From Andrew Black To Everyone : tail -F meeting_saved_chat.txt
+20:39:57 From Andrew Black To Everyone : -F means follow
+20:40:02 From Lesley Black To Andrew Black(Privately) : what happens if I sent one to you only
+20:40:24 From Lesley Black To Everyone : Let's try everyone
+20:41:10 From Lesley Black To Everyone : here's another to everyone
+20:41:11 From Andrew Black To Lesley Black(Privately) : 20:39:19 From Lesley Black To Everyone : lack of inspiration
+20:39:50 From Andrew Black To Everyone : tail -F meeting_saved_chat.txt
+20:39:57 From Andrew Black To Everyone : -F means follow
+20:40:02 From Lesley Black To Andrew Black(Privately) : what happens if I sent one to you only
+20:40:24 From Lesley Black To Everyone : Let's try everyone
+20:41:46 From Andrew Black To Lesley Black(Privately) : time <fro> <to> text

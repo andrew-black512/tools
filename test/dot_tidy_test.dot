@@ -1,0 +1,5 @@
+// example
+  Node1 -> VA"This is text"
+//should become
+   node VA
+   VA [label="This is text"]
