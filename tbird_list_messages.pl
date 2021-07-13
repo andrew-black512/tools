@@ -7,7 +7,7 @@ tbird.pl - list Thunderbird drafts
 =head1 SYNOPSIS
 
 Lists messages in specific thunderbird folders.
-has to be in the top dir profile
+Has to be in the top dir profile
 
 TODO - make dir configurable
 
@@ -24,6 +24,11 @@ use Data::Dumper ;
 use File::Spec ;
 
 my $tbird_local_dir = 'Mail/Local Folders' ; #TODO best was to set this
+# Additonal cases inlcude
+#     ImapMail/mail.aa.net.uk
+#     ImapMail/imap.gmail.com
+#       Drafts-1 (drafts on the server)
+
 my @folders =  (
     #'Drafts-1' ,
     'Unsent Messages'      # Outbox
