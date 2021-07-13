@@ -47,8 +47,8 @@ foreach my $folder ( @folders ) {
        say '' if /^From[^:]/ ;
 
        # To: comes first so indent subject more for clarity
-       print "   $_"  if /To:/ ;
-       print "     $_"  if /Subject:/ ;
+       print "   $_"  if /^To:/ ;
+       print "     $_"  if /^Subject:/ ;
    }
    say '' ;
 }
