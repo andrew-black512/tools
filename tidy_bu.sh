@@ -1,3 +1,3 @@
 echo - deleting editor backup files etc
-rm -v *~ 
+rm -v -i *~
 rm -v httparty.log
