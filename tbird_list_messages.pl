@@ -31,7 +31,8 @@ my $tbird_local_dir = 'Mail/Local Folders' ; #TODO best was to set this
 
 my @folders =  (
     #'Drafts-1' ,
-    'Unsent Messages'      # Outbox
+    'Unsent Messages' ,     # Outbox
+    'Drafts-ab 512'   ,
     ) ;
 
 say '' ;
