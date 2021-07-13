@@ -1,0 +1,61 @@
+
+# Samaritans (in and out)
+    type="17"
+    Move to folder       specific / samaritans
+    condition="OR (from,contains,jo@samaritans.org) OR (to or cc,contains,jo@samaritans.org)"
+
+# Boring autoreplies
+    type="17"
+    Move to folder       boring / autoreplies
+    condition="AND (from,contains,sarah@freeyourspace.co.uk) AND (subject,contains,What to expect...)"
+
+# List-Id contains: semf-announcements.googlegroups.com
+    type="16"
+    Move to folder       INBOX / Bulk-wanted / music_bulk
+    condition="AND (\"list-id\",contains,semf-announcements.googlegroups.com)"
+
+# List-Id is: london.pm.groups.perlists.pm
+    type="17"
+    Move to folder       bulk-tech / perl-related
+    condition="AND (\"list-id\",contains,london.pm.groups.perlists.pm)"
+
+# unused
+    type="16"
+    Move to folder       Done
+    condition="AND (from,is,news@makeuseof.com)"
+
+# From is: jevans238@hotmail.co.uk
+    type="16"
+    Move to folder       Done
+    condition="AND (from,is,jevans238@hotmail.co.uk)"
+
+# From is: andrewdblack@googlemail.com
+    type="17"
+    Move to folder       INBOX / Meet
+    AddTag               
+    condition="OR (from,is,andrewdblack@googlemail.com) OR (from,is,andrewblack512@googlemail.com)"
+
+# Man - later -> meetOld
+    type="16"
+    Move to folder       INBOX / MeetOld
+    condition="AND (tag,is,$label5)"
+
+# From is: info@rochestercathedral.org
+    type="16"
+    Move to folder       INBOX / Bulk-wanted / church
+    condition="AND (from,is,info@rochestercathedral.org)"
+
+# From contains: @benslowmusic.org
+    type="16"
+    Move to folder       INBOX / Bulk-wanted / music_bulk
+    condition="AND (from,contains,@benslowmusic.org)"
+
+# Geomob Man
+    type="16"
+    Move to folder       INBOX / Bulk-wanted / Geomob
+    condition="AND (from,is,edf@opencagedata.com)"
+
+# campaigns@livingstreets.org.uk
+    type="17"
+    Move to folder       INBOX / Bulk-wanted
+    condition="AND (from,is,campaigns@livingstreets.org.uk)"
