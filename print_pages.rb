@@ -76,10 +76,12 @@ end
 # Main
 # get args
 
-start_page = ARGV.shift
-finish_page = ARGV.shift
+start_page = ARGV.shift.to_i
+finish_page = ARGV.shift.to_i
 ## TODO: check arg (raise error)
 puts "#{start_page} #{finish_page} "
 
 #comma_join_test
-TestPageRange.new
+r = PageRange.new( start_page , finish_page )
+puts r.class
+mysys " pdfseparate #{r.print_even_pages}"
