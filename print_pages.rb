@@ -37,7 +37,7 @@ class PageRange
 
   def print_odd_pages
     raa = @range.step(2).to_a
-    pp raa.comma_join
+    pp raa.expandf( 'p%02d ')
   end
   def print_even_pages
     puts "# TODO: reverse"
@@ -61,7 +61,7 @@ class TestPageRange
     pr = PageRange.new( 1,10 )
     puts "start " + pr.start_page.to_s
     puts "end " + pr.finish_page.to_s
-    pr.print_odd_pages
+    puts pr.print_odd_pages
     pr.print_even_pages
 
   end
@@ -70,6 +70,7 @@ end
 
 # Main
 # get args
+
 start_page = ARGV.shift
 finish_page = ARGV.shift
 ## TODO: check arg (raise error)
