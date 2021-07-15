@@ -85,4 +85,8 @@ puts "#{start_page} #{finish_page} "
 #comma_join_test
 r = PageRange.new( start_page , finish_page )
 puts r.class
-mysys " pdfseparate #{r.print_even_pages}"
+mysys " pdfunite #{r.print_odd_pages} a.pdf"
+mysys " pdfunite #{r.print_even_pages} b.pdf"
+mysys 'ls -lrt'
+mysys 'gnome-open a.pdf'
+mysys 'gnome-open b.pdf'
