@@ -26,9 +26,10 @@ def expandf_test
 
 end
 #---------------------------------------------------------------------
-#potential lib
+#potential lib - mysys
 def mysys ( s )
-  puts s
+  puts "SYS: #{s}"
+  system s
 end
 #---------------------------------------------------------------------
 class PageRange
