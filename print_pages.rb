@@ -6,11 +6,23 @@ class Array
   def comma_join  #( arr )
     self.join(',')
   end
+  def expandf (format)
+    self.map { |s|
+      sprintf( format, s)
+    }.join
+  end
 end
+
 def comma_join_test
   puts ['a'].comma_join
   puts (%w/a b c/ ).comma_join
   puts [].comma_join
+
+end
+def expandf_test
+  #puts ['a'].comma_join
+  puts ([1 , 2 ,10] ).expandf ("p%02d ")
+  #puts [].comma_join
 
 end
 
