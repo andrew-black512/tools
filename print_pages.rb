@@ -45,7 +45,7 @@ class PageRange
     new_start = self.start_page + 1
     pp new_start
     raa = (new_start .. self.finish_page ).step(2).to_a
-    pp raa.comma_join
+    pp raa.reverse.expandf( 'p%02d ')
   end
   # these maybe useful, but more to demonstarte how to get the bounds of the range
   def start_page
