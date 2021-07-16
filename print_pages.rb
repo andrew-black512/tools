@@ -60,6 +60,9 @@ class PageRange
   def finish_page
     @range.last
   end
+  def extract
+    "-f #{start_page} -l #{finish_page} "
+  end
 end
 
 class TestPageRange
@@ -77,14 +80,20 @@ end
 # Main
 # get args
 
+file = ARGV.shift
 start_page = ARGV.shift.to_i
 finish_page = ARGV.shift.to_i
 ## TODO: check arg (raise error)
 puts "#{start_page} #{finish_page} "
 
 #comma_join_test
+mysys "rm p* -v"
+mysys "rm b.pdf"
+mysys "rm b.pdf"
+
 r = PageRange.new( start_page , finish_page )
-puts r.class
+format='p%02d '
+mysys "pdfseparate #{r.extract} #{file} #{format}"
 mysys " pdfunite #{r.print_odd_pages} a.pdf"
 mysys " pdfunite #{r.print_even_pages} b.pdf"
 mysys 'ls -lrt'
