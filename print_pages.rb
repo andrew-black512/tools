@@ -37,9 +37,16 @@ class PageRange
   attr :format
 
   def initialize( s, e )
-    @start_page = s
-    @range = (s..e)
-    @format='p%02d '
+    # TODO - might be better Start+pages but it works
+    if (e-s).odd?  ||  e==s
+
+      @start_page = s
+      @range = (s..e)
+      @format='p%02d '
+    else
+      puts "Invalid start (either 1 or even number)"
+      exit
+    end
   end
 
   def print_odd_pages
