@@ -87,6 +87,23 @@ end
 # Main
 # get args
 
+if ARGV.count < 3
+    puts <<EOS
+    print_pages  file  start end
+
+    At moment checks
+     - even number of pages
+     - exactly 1 page
+    Output is
+     a.pdf : odd
+     b.pdf : even in reverse order
+
+    Run it in a scratch directory
+
+EOS
+     exit
+end
+
 file = ARGV.shift
 start_page = ARGV.shift.to_i
 finish_page = ARGV.shift.to_i
