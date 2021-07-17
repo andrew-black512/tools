@@ -110,8 +110,9 @@ finish_page = ARGV.shift.to_i
 ## TODO: check arg (raise error)
 puts "#{start_page} #{finish_page} "
 
-#comma_join_test
+puts "Tidy up - TODO use ruby"
 mysys "rm p* -v"
+mysys "rm a.pdf"
 mysys "rm b.pdf"
 mysys "rm b.pdf"
 
