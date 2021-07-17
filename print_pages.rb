@@ -114,13 +114,13 @@ puts "Tidy up - TODO use ruby"
 mysys "rm p* -v"
 mysys "rm a.pdf"
 mysys "rm b.pdf"
-mysys "rm b.pdf"
+puts ""
 
 r = PageRange.new( start_page , finish_page )
 format='p%02d '
 mysys "pdfseparate #{r.extract} #{file} #{format}"
 mysys " pdfunite #{r.print_odd_pages} a.pdf"
 mysys " pdfunite #{r.print_even_pages} b.pdf"
-mysys 'ls -lrt'
+
 mysys 'gnome-open a.pdf'
 mysys 'gnome-open b.pdf'
