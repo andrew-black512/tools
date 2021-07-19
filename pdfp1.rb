@@ -1,6 +1,10 @@
 #!/usr/bin/ruby
 
-exit if ARGV.count < 2 
+def pdf_pages (file)
+   system "pdfinfo  #{file} | grep Pages  "
+end
+## TODO: - make the output file automaticella (eg as far as the *)
+exit if ARGV.count < 2
 
 fileglob = ARGV.shift
 outfile = ARGV.shift
@@ -17,4 +21,5 @@ Dir.glob(fileglob).each do |file|
 end
 puts ''
 puts partlist.join ' '
-system "echo pdfunite   #{partlist.join ' '}  #{outfile} "
+system "pdfunite   #{partlist.join ' '}  #{outfile} "
+pdf_pages outfile
