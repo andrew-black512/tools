@@ -58,7 +58,7 @@ git_commit ( $comment_detailed, $file ) ;
 sub git_commit {
     my $message = shift ;
     my $file_etc = shift // '' ;
-    
-system ( "git commit $file_etc -m \"$message\" " ) ;
+
+system ( "git commit $file_etc -m \"$file_etc: $message\" " ) ;
 
 }
