@@ -9,4 +9,6 @@
  echo Stashes:
  git stash list
 
+ echo
  git status --untracked-files=no
+ git log --oneline --decorate -n5
