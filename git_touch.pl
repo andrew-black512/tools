@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w 
+#!/usr/bin/perl -w
 #--------------------------------------------------
 
 =head1 NAME
@@ -21,7 +21,7 @@ Used for automating demos etc
 
 use strict ;
 use warnings ;
-use feature ":5.10" ;   
+use feature ":5.10" ;
 use File::Slurp ;
 use POSIX qw/strftime/ ;
 
@@ -32,14 +32,14 @@ use Data::Dumper ;
 my %command_options ;
 
 # see getoptlong_template_test.pl for more examples.
- 
+
 # Get the command optopns and warn user if they don't match
 my $parse_result =  GetOptions (  \%command_options ,
-       'file=s' ,        # file to touch 
+       'file=s' ,        # file to touch
        'commit!' ,
        "man", 'help',    # standard otptions
         ) ;
- 
+
 pod2usage (2) unless $parse_result ;
 pod2usage (1) if $command_options{ help }  ;
 pod2usage (2) if $command_options{ man }  ;
