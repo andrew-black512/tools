@@ -11,4 +11,10 @@ puts filename.light_green.bold
 puts command.blue
 
 stdout, stderr, status = Open3.capture3( command )
-puts stdout
+
+#QUERY - can status be used?
+if stderr == ''
+	puts stdout
+else
+	puts stderr
+end
