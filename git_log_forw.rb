@@ -13,7 +13,8 @@ def print_indented_text textstring
     textarr =  textstring.split "\n"
     textarr = textarr.reverse
     textarr.each do |l|
-        l.sub! /\s/, '     '
+        l.sub!   /(?<=\w{7})/x , '     '
+
         puts "#{indent}#{l}"
     end
 end
@@ -23,12 +24,10 @@ end
 
 #puts "a".methods
 
-filename = ARGV.shift
-command = ARGV.join ' '  # remaining args
-puts filename.light_green.bold
-puts command.blue
+command = 'git log --oneline --decorate'
+commandargs = ARGV.join ' '  # remaining args
 
-stdout, stderr, status = Open3.capture3( command )
+stdout, stderr, status = Open3.capture3( "#{command} #{commandargs}" )
 
 #QUERY - can status be used?
 if stderr == ''
