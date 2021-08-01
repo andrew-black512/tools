@@ -4,9 +4,16 @@ require 'open3'
 #https://www.honeybadger.io/blog/capturing-stdout-stderr-from-shell-commands-via-ruby/
 
 #---------------------------------------------------------------------
+# Semi config
+#---------------------------------------------------------------------
 def print_indented_text textstring
-	textarr = textstring.split "\n"
-	puts textarr
+	indent = '    '
+
+	textarr =  textstring.split "\n"
+	textarr.each do |l|
+		l.sub! /\s/, '     '
+		puts "#{indent}#{l}"
+	end
 end
 
 #---------------------------------------------------------------------
