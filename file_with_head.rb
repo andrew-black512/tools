@@ -9,3 +9,6 @@ filename = ARGV.shift
 command = ARGV.join ' '  # remaining args
 puts filename.light_green.bold
 puts command.blue
+
+stdout, stderr, status = Open3.capture3( command )
+puts stdout
