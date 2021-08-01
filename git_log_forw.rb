@@ -1,7 +1,9 @@
 #!/usr/bin/ruby
 require 'colorize'
 require 'open3'
-#https://www.honeybadger.io/blog/capturing-stdout-stderr-from-shell-commands-via-ruby/
+
+# Notes
+#  deoent play very well with --GRAPH ( \ and / are wribg way)
 
 #---------------------------------------------------------------------
 # Semi config
