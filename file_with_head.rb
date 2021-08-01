@@ -7,13 +7,13 @@ require 'open3'
 # Semi config
 #---------------------------------------------------------------------
 def print_indented_text textstring
-	indent = '    '
-
-	textarr =  textstring.split "\n"
-	textarr.each do |l|
-		l.sub! /\s/, '     '
-		puts "#{indent}#{l}"
-	end
+    indent = '    '
+    textarr =  textstring.split "\n"
+    textarr = textarr.reverse
+    textarr.each do |l|
+        l.sub! /\s/, '     '
+        puts "#{indent}#{l}"
+    end
 end
 
 #---------------------------------------------------------------------
@@ -31,8 +31,8 @@ stdout, stderr, status = Open3.capture3( command )
 #QUERY - can status be used?
 if stderr == ''
 
-	print_indented_text stdout
+    print_indented_text stdout
 
 else
-	puts stderr
+    puts stderr
 end
