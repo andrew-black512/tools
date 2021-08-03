@@ -7,7 +7,10 @@ INTO=$2 # TODOOptional - to add
 git checkout master
 git commit --allow-empty --allow-empty-message -m ''
 
-echo <<EOS
+cat <<EOS
+
+This covers basic merging, done to get me to do if often.
+If need be rework for other cases.
 
 Insert a description as first line followed by blank.
 
