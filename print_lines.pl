@@ -118,9 +118,9 @@ sub do_list
 # For now make it Thatcherite (the is no alternative)
 sub print_heads
 {
-	my $filelistref = shift ;
-	my @filelist = @{$filelistref} ;
-	print Dumper \@filelist ;
+    my $filelistref = shift ;
+    my @filelist = @{$filelistref} ;
+    print Dumper \@filelist ;
 
 #my $file ;
 print "List of files\n"  ;
@@ -135,30 +135,30 @@ print "\n\n" ;
 FILE:
 foreach my $f (  @$filelistref )
 {
-	printf  $format_file ,  $f ;
+    printf  $format_file ,  $f ;
     print $format_pre_file ;
 
-	open ( my $FH, '<', $f) or die "can't open $f " ;
+    open ( my $FH, '<', $f) or die "can't open $f " ;
     my $lineno=0;
-	while ( <$FH> )
-	{
+    while ( <$FH> )
+    {
 
-	   if ( $lineno > $max_lines )
+       if ( $lineno > $max_lines )
        {
-		   print " .... \n" ;  # Say there is supressed data
+           print " .... \n" ;  # Say there is supressed data
            next FILE ;
        }
        next if /^#/ && $command_options{nocomm} ;
-	   $lineno ++ ;
+       $lineno ++ ;
 
        #printf ( $format, $. , $_) ;
        printf ( $format, $_) ;
-	}
+    }
 
 
     } continue
-	{
-		    print $format_post_file ;
+    {
+            print $format_post_file ;
 
-	}
+    }
 }
