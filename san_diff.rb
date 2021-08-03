@@ -2,10 +2,13 @@
 
 
 def process_diff ( line )
-
+  puts file
   case line
+  when /^\+{3} b\/([.\w]+)/
+      file = $1
+      puts "  File #{file}"
     when /^\+/
-      puts "  add #{line}"
+      puts "     #{line}"
   end
 
 end
