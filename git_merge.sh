@@ -1,7 +1,7 @@
 #/bin/bash
-FROM=$1
-INTO=$2 # TODOOptional - to add
-#  - find common base of commit
+FROM=$1   # Arguably could be the current branch (ie one you have bveen editing)
+INTO=$2 # TODO Optional - to add
+#  - find common base of commit (usaully develop or mater)
 
 
 git checkout master
