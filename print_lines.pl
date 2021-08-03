@@ -1,22 +1,22 @@
 #!/usr/bin/perl -w
- 
+
 =head1 NAME
 
 print_lines.pl - Prints the first N lines of each file.
 
 =head1 SYNOPSIS
- 
+
         perl list_lines.pl  [opts]  files.....
- 
+
           -lines   num lines to print per file
           -html    format in HTML
           -moin    format for MOIN
           -nocomm    ignore comments
-		  
-Moving towarda a modularised version 
-          
-                                        
-=head1 OPTIONS 
+
+Moving towarda a modularised version
+
+
+=head1 OPTIONS
 
 Options will go in here
 
@@ -25,15 +25,19 @@ Options will go in here
 
 ... Full Desc to go here ....
 
-=head TODO 
+=head TODO
 
- would be better to treat each file seperately ratehr tahn 
+ would be better to treat each file seperately ratehr tahn
  use the <> operator.
- 
+
+ Remove leading and traning whitespae
+ Ignore coment lines #
+ Handle missing files gracefully (write to STDERR?)
+
 
 =cut
 #------------------------------------------------------------------------
- 
+
 
 use strict ;
 use Getopt::Long ;
@@ -42,17 +46,17 @@ use Data::Dumper ;
 
 use vars qw/%command_options/ ;
 use vars qw/$format_file $format_pre_file  $format_post_file/ ;
- 
+
 # Get the command optopns and warn user if they don't match
 my $parse_result =  GetOptions (  \%command_options ,
        "lines=n",
        "html!" ,
        "man", 'help',    # standard otptions
-       "list", 
+       "list",
        "moin" ,
        "nocomm" ,
         ) ;
- 
+
 pod2usage (2) unless $parse_result ;
 pod2usage (1) if $command_options{ help }  ;
 pod2usage (2) if $command_options{ man }  ;
@@ -60,13 +64,13 @@ pod2usage (2) if $command_options{ man }  ;
 
 
 my $max_lines =  $command_options{lines} || 5 ;
- 
+
 #my $format = '   %4d  %s' ;
 my $format = '     %s' ;
- 
+
 &setup_formats;
 &do_list ;
- 
+
 #==================================================
 sub setup_formats
 {
@@ -89,7 +93,7 @@ sub setup_formats
         $format_post_file  = "\n" ;
    }
 }
- 
+
 #==================================================
 sub do_list
 {
@@ -98,6 +102,7 @@ sub do_list
    {                    # gets a list of files from STDIN
        while ( <STDIN> )
        {
+           chomp ;
            push @ARGV, $_ ;
        }
    }
@@ -108,10 +113,10 @@ sub do_list
    print_heads (\@ARGV) ;
 }
 #==================================================
-# Below here is a candidate for a module.  
+# Below here is a candidate for a module.
 # Stuff that is configurable might be better of using Mooose
 # For now make it Thatcherite (the is no alternative)
-sub print_heads 
+sub print_heads
 {
 	my $filelistref = shift ;
 	my @filelist = @{$filelistref} ;
@@ -119,7 +124,7 @@ sub print_heads
 
 #my $file ;
 print "List of files\n"  ;
-for my $file ( @$filelistref ) 
+for my $file ( @$filelistref )
 {
    print "   $file\n" ;
 }
@@ -127,7 +132,7 @@ for my $file ( @$filelistref )
 print "\n\n" ;
 
 
-FILE: 
+FILE:
 foreach my $f (  @$filelistref )
 {
 	printf  $format_file ,  $f ;
@@ -137,7 +142,7 @@ foreach my $f (  @$filelistref )
     my $lineno=0;
 	while ( <$FH> )
 	{
- 
+
 	   if ( $lineno > $max_lines )
        {
 		   print " .... \n" ;  # Say there is supressed data
@@ -149,12 +154,11 @@ foreach my $f (  @$filelistref )
        #printf ( $format, $. , $_) ;
        printf ( $format, $_) ;
 	}
- 
-    	
-    } continue 
+
+
+    } continue
 	{
 		    print $format_post_file ;
 
 	}
 }
-
