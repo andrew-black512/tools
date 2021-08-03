@@ -5,7 +5,7 @@ INTO=$2 # TODOOptional - to add
 
 
 git checkout master
-git commit --allow-empty --allow-empty-message
+git commit --allow-empty --allow-empty-message -m ''
 
 echo <<EOS
 
@@ -13,7 +13,7 @@ Insert a description as first line followed by blank.
 
 EOS
 
-sleep 1
-exit
+read -s -p "RETURN to continue" v
+echo "v=$v"
 
 git merge $FROM
