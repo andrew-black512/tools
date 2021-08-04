@@ -10,9 +10,9 @@ def git_date2txt( datestring)
   wd,month,day,time,year = datestring.split
   return sprintf "%02d-%3s %s", day, month, time[0,5]
 end
-def process_diff ( line )
+def process_diff ( line_enum )
 
-
+  line_enum.each do |line|
   case line
   when /^commit\s+(.*)/
     puts ''
@@ -35,7 +35,7 @@ def process_diff ( line )
       logline = $1
       puts "     #{logline}"
   end
-
+end
 end
 combined_argv=ARGV.join '-'
 indent = '    '
@@ -43,7 +43,10 @@ indent = '    '
 
 
 #TODO - end/ change of file
-ARGF.each do |line|
-    process_diff line
+#ARGF.each do |line|
+  content = ARGF.each
+  puts content.class
+  #exit
+    process_diff content  # line
 
-end
+#end
