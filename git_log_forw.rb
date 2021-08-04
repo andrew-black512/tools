@@ -13,7 +13,8 @@ def print_indented_text textstring
     textarr =  textstring.split "\n"
     textarr = textarr.reverse
     textarr.each do |l|
-        l.sub!   /(?<=\w{7})/x , '     '
+        # this isn't wroking - colour messes up
+        #l.sub!   /(\w{7,}\S*)\s/x , "$1 ___"
 
         puts "#{indent}#{l}"
     end
