@@ -13,16 +13,16 @@ end
 def process_diff ( line_enum )
 
   line_enum.each do |line|
-  case line
-  when /^commit\s+(.*)/
-    puts ''
-    puts "Commit   #{$1}"
-  when /^Author:\s+(.*)/
-    # At moment this is only me so boring.
-    #puts "   #{$1}"
-  when /^Date:  \s+(.*)/
-    datestring = git_date2txt $1
-    puts "   #{datestring}"
+    case line
+    when /^commit\s+(.*)/
+      puts ''
+      puts "Commit   #{$1}"
+    when /^Author:\s+(.*)/
+      # At moment this is only me so boring.
+      #puts "   #{$1}"
+    when /^Date:  \s+(.*)/
+      datestring = git_date2txt $1
+      puts "   #{datestring}"
 
     when /^\+{3} b\/([.\w]+)/
       file = $1
