@@ -34,19 +34,11 @@ def process_diff ( line_enum )
       # context lines coming out as log
       logline = $1
       puts "     #{logline}"
+    end
   end
 end
-end
-combined_argv=ARGV.join '-'
-indent = '    '
 
-
-
+#
 #TODO - end/ change of file
-#ARGF.each do |line|
-  content = ARGF.each
-  puts content.class
-  #exit
-    process_diff content  # line
-
-#end
+content = ARGF.each    # enumerator
+process_diff content
