@@ -30,6 +30,8 @@ def process_diff ( line )
     when /^\+/
       puts "     #{line}"
     when /^\s+(.+)/
+      # TODO: only first (or chunk of) lines. Wait for refactor-ish
+      # context lines coming out as log
       logline = $1
       puts "     #{logline}"
   end
