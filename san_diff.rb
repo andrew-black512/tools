@@ -12,10 +12,14 @@ def git_date2txt( datestring)
 end
 def process_diff ( line_enum )
 
+  data = {}
   line_enum.each do |line|
     case line
     when /^commit\s+(.*)/
-      puts ''
+      puts '----' # line
+      if line =~ / \( ( .* ) \)/x
+        puts "branch etc: #{$1}"
+      end
       puts "Commit   #{$1}"
     when /^Author:\s+(.*)/
       # At moment this is only me so boring.
