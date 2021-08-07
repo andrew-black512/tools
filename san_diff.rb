@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-
+require_relative 'lib/git_report.rb'
 # commit 8e1f5456697f087a45848367bb98d3954910d8bd (HEAD -> dev_0729)
 # Author: Andrew Black <andrew@black1.org.uk>
 
@@ -11,11 +11,13 @@ def git_date2txt( datestring)
   return sprintf "%02d-%3s %s", day, month, time[0,5]
 end
 def process_diff ( line_enum )
+  g = GitReport.new
 
   data = {}
   line_enum.each do |line|
     case line
     when /^commit\s+(.*)/
+      g.printinfo ''
       puts '----' # line
       if line =~ / \( ( .* ) \)/x
         puts "branch etc: #{$1}"
@@ -26,20 +28,21 @@ def process_diff ( line_enum )
       #puts "   #{$1}"
     when /^Date:  \s+(.*)/
       datestring = git_date2txt $1
-      puts "   #{datestring}"
+      g.add 'date', datestring
 
     when /^\+{3} b\/([.\w]+)/
       file = $1
-      puts "   #{file}"
+      g.add 'file', file
     when /^\+/
       puts "     #{line}"
     when /^\s+(.+)/
       # TODO: only first (or chunk of) lines. Wait for refactor-ish
       # context lines coming out as log
       logline = $1
-      puts "     #{logline}"
+      g.add 'log', logline
     end
   end
+  g.printinfo 'end'
 end
 
 #
