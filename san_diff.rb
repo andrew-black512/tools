@@ -18,11 +18,11 @@ def process_diff ( line_enum )
     case line
     when /^commit\s+(.*)/
       g.printinfo ''
-      puts '----' # line
+      ##puts '----' # line
       if line =~ / \( ( .* ) \)/x
         puts "branch etc: #{$1}"
       end
-      puts "Commit   #{$1}"
+      #puts "Commit   #{$1}"
     when /^Author:\s+(.*)/
       # At moment this is only me so boring.
       #puts "   #{$1}"
