@@ -30,11 +30,11 @@ def process_diff ( line_enum )
       datestring = git_date2txt $1
       g.add 'date', datestring
 
-    when /^\+{3} b\/([.\w]+)/
-      file = $1
-      g.add 'file', file
+    when /^([AMD]) \s+ (.*)/x  # Look for "M   filename"
+      file = $2
+      g.addmulti 'file', file
     when /^\+/
-      puts "     #{line}"
+      #puts "Change     #{line}"
     when /^\s+(.+)/
       # TODO: only first (or chunk of) lines. Wait for refactor-ish
       # context lines coming out as log
