@@ -13,8 +13,10 @@ class GitReport
 
   end
   def printinfo (type)
-    puts type
-     puts @gitinfo
+    if @gitinfo != {}
+       puts sprintf '%-10s  %-20s  "%20s"', @gitinfo['date'].upcase , @gitinfo['file'].upcase, @gitinfo['log']
+    end
+    @gitinfo = {}
   end
 
 
