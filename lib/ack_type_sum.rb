@@ -3,6 +3,8 @@ require 'pry'
 
 class AckType
   def self.get_type_array ( directory )
+    # ack -f --show-types returns lines
+    #    filename => type
     types_string = `ack -f --show-types #{directory}`
     pp types_string
     (types_string.split"\n" )
@@ -12,7 +14,14 @@ class AckType
 
 
   end
+  def self.get_type_counts ( typearray )
+    typearray.each do |t,keyarr|
+      puts t,keyarr.count
+    end
+  end
 end
 
-s = AckType.get_type_array ()
+dir = ARGV.shift
+type_hash = AckType.get_type_array ( dir)
+t = AckType.get_type_counts type_hash
 binding.pry
