@@ -32,7 +32,7 @@ die unless $site ;
 
 my $command='chromium-browser --app=https://%s' ;
 if ($site =~ /folders/) {
-  # folders in drive need a window with tabs.
+  # folders in drive are better in a window with tabs.
   $command='chromium-browser %s' ;
 
 }
