@@ -29,4 +29,11 @@ my $site = $sites {$verb} ;
 say "verb=$verb site=$site" ;
 die unless $site ;
 
-system "chromium-browser --app=https://$site"
+my $command='chromium-browser --app=https://%s' ;
+if ($site =~ /folders/) {
+  # folders in drive need a window with tabs.
+  $command='chromium-browser %s' ;
+
+}
+say $command ;
+system sprintf $command,$site
