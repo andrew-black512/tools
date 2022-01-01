@@ -22,14 +22,14 @@ use Data::Dumper ;
 use File::Spec ;
 
 my %sites = (
-  g => 'www.google.com' ,
   c => 'www.thecalmzone.net/help/webchat/' ,
-  rec => 'drive.google.com/drive/folders/0BybtFQ3kyI3RZl9DenRjSDFLTVU' ,
-  ph => 'docs.google.com/document/d/192faOiM0Zso9LxjvT0CeZnC0FyUrXbwjVk0IqKahZ-o' ,
+  cow => 'www.meetup.com/Write-More-Swiss-Cottage-Library-Writing-Group/' ,
+  nev =>  'http://www.neverssl.com/' ,  #TODO wont work
 ) ;
 my $verb = shift ;
 my $site = $sites {$verb} ;
 say "verb=$verb site=$site" ;
 die unless $site ;
+my $command='firefox -no-remote -P standalone %s' ;
 
-system "chromium-browser --app=https://$site"
+system sprintf $command,$site
