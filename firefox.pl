@@ -9,6 +9,9 @@ xxxxx.pl -
 =head1 DESCRIPTION
 
 =head1 TO DO
+ integrate with chrome.pl
+ allow param to be a domain
+ Decide on whether to strip off https://
 
 =cut
 
