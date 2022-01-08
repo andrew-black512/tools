@@ -15,6 +15,10 @@ Zoom id is subject to change beyond my control...
 sub rename_files {
   my $dir = shift ;
   my $prefix = shift ;
+
+  print "d=$dir \n" ;
+  my @files = glob "$dir/*" ;
+  print "r: @files\n" ;
 }
 
 
@@ -37,7 +41,7 @@ foreach my $zoom_dir_name (@dirs) {
   print "$prefix\n" ;
   print "$date  $time $prefix a\n" ;
 
-
+  rename_files ($zoom_dir_name, $prefix) ;
   exit
 
   # Multiple spaces and ( to _
