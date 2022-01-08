@@ -15,6 +15,7 @@ Zoom id is subject to change beyond my control...
 sub rename_files {
   my $dir = shift ;
   my $prefix = shift ;
+  my $dest = shift ;
   chdir $dir ;
 
   print "d=$dir \n" ;
@@ -22,6 +23,10 @@ sub rename_files {
 
   foreach my $file (@files) {
     print  "r: $file\n" ;
+    my $newfilename = "$dest/$prefix$file" ;
+    $newfilename =~ s/meeting_saved_// ;
+    print "Rename $file as  $newfilename\n" ;
+    rename $file , $newfilename or die "Cannot rename file: $!";
 
   }
 }
@@ -29,6 +34,7 @@ sub rename_files {
 
 my $selector = 'Black' ;
 my $destdir = '/home/andrew/work/meet/notes/' ;
+my $destdirleaf = lc $selector ;
 
 my @dirs = glob ("*$selector*") ;
 
@@ -46,14 +52,8 @@ foreach my $zoom_dir_name (@dirs) {
   print "$prefix\n" ;
   print "$date  $time $prefix a\n" ;
 
-  rename_files ($zoom_dir_name, $prefix) ;
-  exit
+  rename_files ($zoom_dir_name, $prefix,
+     "/home/andrew/work/meet/notes/$destdirleaf"
+  ) ;
 
-  # Multiple spaces and ( to _
-
-  # Multiple  ) to nothing
-  $newfilename =~ s/  \)+ //gx ;
-
-  print "Rename $filename as  $newfilename\n" ;
-  ##### rename $filename , $newfilename or die "Cannot rename file: $!";
 }
