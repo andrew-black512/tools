@@ -39,11 +39,10 @@ sub rename_files {
   my @files = glob "*" ;
 
   foreach my $file (@files) {
-    print  "r: $file\n" ;
     my $newfilename = "$dest/$prefix$file" ;
     $newfilename =~ s/meeting_saved_// ;
-    print "Rename $file as  $newfilename\n" ;
-    rename $file , $newfilename or die "Cannot rename file: $!";
+    print "   Rename $file as  $newfilename\n" ;
+    ## rename $file , $newfilename or die "Cannot rename file: $!";
 
   }
 }
@@ -60,14 +59,14 @@ my @dirs = glob ("*$selector*") ;
 
 foreach my $zoom_dir_name (@dirs) {
   my ($date,$time) = $zoom_dir_name   =~ m/(\d+ - \d+ - \d+) \s+ ([\d\.]+)/x ;
-  print "$zoom_dir_name\n" ;
+  print "== $zoom_dir_name\n" ;
 
   # sanatise date and time (only one type of seperator)
   $date =~ s/^20// ;   # not year 2100 compliant !
   $time =~ s/\.//g ;
   my $prefix = sprintf "%s-%s-", $date , $time ;
-  print "$prefix\n" ;
-  print "$date  $time $prefix a\n" ;
+  ##print "$prefix\n" ;
+  ##print "$date  $time $prefix a\n" ;
 
   rename_files ($zoom_dir_name, $prefix,
      "/home/andrew/work/meet/notes/$destdirleaf"
