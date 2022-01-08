@@ -1,8 +1,16 @@
-#!/usr/bin/perl
-#use '5.10.0' ;
+#!/usr/bin/perl -w
 
+=head1 NAME
 
-=head 1
+xxxxx.pl -
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+=head1 TO DO
+
+=head1 Format notes
 Format is
 
 '2022-01-06 10.03.37 andrew + Beatrice 2021 78895331242'
