@@ -21,8 +21,9 @@ my @dirs = glob ("*$selector*") ;
 #print @dirs ;
 
 
-foreach my $filename (@dirs) {
-  my ($date,$time) = $filename   =~ m/(\d+ - \d+ - \d+) \s+ ([\d\.]+)/x ;
+foreach my $zoom_dir_name (@dirs) {
+  my ($date,$time) = $zoom_dir_name   =~ m/(\d+ - \d+ - \d+) \s+ ([\d\.]+)/x ;
+  print "$zoom_dir_name\n" ;
   print "$date  $time\n" ;
 
   my $prefix = "$date_$time_" ;
