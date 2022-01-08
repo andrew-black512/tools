@@ -12,6 +12,11 @@ time is digit and .
 Zoom id is subject to change beyond my control...
 
 =cut
+sub rename_files {
+  my $dir = shift ;
+  my $prefix = shift ;
+}
+
 
 my $selector = 'Black' ;
 my $destdir = '/home/andrew/work/meet/notes/' ;
@@ -24,9 +29,14 @@ my @dirs = glob ("*$selector*") ;
 foreach my $zoom_dir_name (@dirs) {
   my ($date,$time) = $zoom_dir_name   =~ m/(\d+ - \d+ - \d+) \s+ ([\d\.]+)/x ;
   print "$zoom_dir_name\n" ;
-  print "$date  $time\n" ;
 
-  my $prefix = "$date_$time_" ;
+  # sanatise date and time (only one type of seperator)
+  $date =~ s/^20// ;   # not year 2100 compliant !
+  $time =~ s/\.//g ;
+  my $prefix = sprintf "%s-%s-", $date , $time ;
+  print "$prefix\n" ;
+  print "$date  $time $prefix a\n" ;
+
 
   exit
 
