@@ -16,10 +16,19 @@ Format is
 '2022-01-06 10.03.37 andrew + Beatrice 2021 78895331242'
 Assume date is digits and -
 time is digit and .
-(might change on upgrade...)
+(Format might change on upgrade...)
 Zoom id is subject to change beyond my control...
 
 =cut
+
+use strict ;
+use warnings ;
+use 5.10.0 ;
+use Data::Dumper ;
+use File::Spec ;
+
+#-----------------------------------------------------
+
 sub rename_files {
   my $dir = shift ;
   my $prefix = shift ;
