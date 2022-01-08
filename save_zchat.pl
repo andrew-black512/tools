@@ -15,12 +15,17 @@ Zoom id is subject to change beyond my control...
 sub rename_files {
   my $dir = shift ;
   my $prefix = shift ;
+  chdir $dir ;
 
   print "d=$dir \n" ;
-  my @files = glob "$dir/*" ;
-  print "r: @files\n" ;
-}
+  my @files = glob "*" ;
 
+  foreach my $file (@files) {
+    print  "r: $file\n" ;
+
+  }
+}
+#-----------------------------------------------------
 
 my $selector = 'Black' ;
 my $destdir = '/home/andrew/work/meet/notes/' ;
