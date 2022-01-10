@@ -63,7 +63,7 @@ my $destdirleaf = lc $selector ;
 
 my @dirs = glob ("*$selector*") ;
 
-#print @dirs ;
+print Dumper (\@dirs) ;
 
 
 foreach my $zoom_dir_name (@dirs) {
