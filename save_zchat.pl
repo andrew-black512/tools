@@ -26,6 +26,7 @@ use warnings ;
 use 5.10.0 ;
 use Data::Dumper ;
 use File::Spec ;
+use Cwd ;
 
 #-----------------------------------------------------
 
@@ -33,18 +34,26 @@ sub rename_files {
   my $dir = shift ;
   my $prefix = shift ;
   my $dest = shift ;
-  chdir $dir ;
 
-  print "d=$dir \n" ;
+  my $dry = 0 ;
+
+  my $savedir = getcwd;
+
+  chdir $dir or die "can't change $!";
+
   my @files = glob "*" ;
 
   foreach my $file (@files) {
     my $newfilename = "$dest/$prefix$file" ;
     $newfilename =~ s/meeting_saved_// ;
     print "   Rename $file as  $newfilename\n" ;
-    ## rename $file , $newfilename or die "Cannot rename file: $!";
+    rename $file , $newfilename or die "Cannot rename file: $!" unless $dry ;
+
 
   }
+  chdir $savedir ;
+  rmdir $dir or die "can't rmdir: $!" ;
+  say '' ;
 }
 #-----------------------------------------------------
 
