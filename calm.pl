@@ -22,21 +22,21 @@ my %prefix = (
   -1 => '     ' ,       # Me
 ) ;
 
-my $direction = 1 ;
+say "Calm output" ;
+my $direction = 0 ; # initially don't print
 while (<>) {
-    if (/account_circle/) {
-       $direction = - $direction ;
+    if (/CALM Helpline/ || /helpline member/)  {
+       $direction = 1 ;
        #print Dumper $direction ;
        next ;
     }
-    if (/welcome to CALM webchat/) {
-       $direction = 1 ;
-    }
-    if (/hi calm/i) {   # I try to start chats with this if they are late
-       $direction = -1 ;
-    }
     next if /^$/ ;
     next if /^\d\d:\d\d/ ; # TODO preserve time
-    s/'/''/g ;  # apostrophes mess up the colouring
-    print $prefix{ $direction } . $_ ;
+    s/'/''/g ;  # apostrophes mess up the colouring (bodge)
+
+    if ($direction) {
+      print $prefix{ $direction } . $_ ;
+      $direction = -1 ;
+    }
+
 }
