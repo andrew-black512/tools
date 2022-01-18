@@ -21,6 +21,7 @@ use File::Spec ;
 my %sites = (
   g => 'www.google.com' ,
   c => 'www.thecalmzone.net/help/webchat/' ,
+  ch => 'mail.google.com/chat/u/0/#chat/dm/tAjbzgAAAAE' ,
   m => 'mail.google.com/mail/u/0/#label/512Blank' ,
   rec => 'drive.google.com/drive/folders/0BybtFQ3kyI3RZl9DenRjSDFLTVU' ,
   ph => 'docs.google.com/document/d/192faOiM0Zso9LxjvT0CeZnC0FyUrXbwjVk0IqKahZ-o' ,
