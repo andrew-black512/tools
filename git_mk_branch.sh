@@ -1,10 +1,9 @@
-TAGNAME=to_stable_$(date +"%Y_%m_%d" )
-echo tag=$TAGNAME
-git tag -f $TAGNAME HEAD
+# d22_03_21_live
+TOPIC=$1
+DESC=$2
+BRNAME=d$(date +"%y_%m_%d" )_$TOPIC
+echo tag=$BRNAME
 
-cd /home/andrew/dev/trainsstable
-echo
-git pull origin master
-echo
-git log -n 10  --oneline --decorate
-echo
+git checkout -b $BRNAME
+
+git branch --edit-description
