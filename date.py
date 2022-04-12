@@ -3,7 +3,6 @@ import argparse
 import sys
 from datetime import timedelta,datetime
 
-print (len(sys.argv))
 if len(sys.argv) == 1 :
   offset = 0
 else :
