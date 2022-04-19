@@ -1,0 +1,16 @@
+class Xxxxx
+  attr # put :fields in here (one to a line)
+  attr_reader
+
+  def initialize( )
+    # set up any fields from params .....Set defaults
+  end
+
+
+  def printinfo
+     puts ''
+  end
+
+
+
+end
