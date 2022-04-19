@@ -23,7 +23,8 @@ use File::Spec ;
 
 my %sites = (
   c => 'www.thecalmzone.net/help/webchat/' ,
-  cow => 'www.meetup.com/Write-More-Swiss-Cottage-Library-Writing-Group/' ,
+  cow => 'www.meetup.com/Write-More-Swiss-Cottage-Library-Writing-Group/events' ,
+  g => 'www.google.com' ,
   nev =>  'http://www.neverssl.com/' ,  #TODO wont work
 ) ;
 my $verb = shift ;
