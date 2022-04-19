@@ -19,10 +19,11 @@ class GitReport
 
   def printinfo (type)
     if @gitinfo['date']
-      pp @gitinfo
+      #pp @gitinfo
       files = @gitinfo['file'].join ','
-      puts files
-      puts sprintf '%-10s  %-20s  "%20s"', @gitinfo['date'].upcase , files.upcase, @gitinfo['log']
+      puts sprintf '%3s %-10s  %-20s  "%20s"',
+       @gitinfo['no'],
+       @gitinfo['date'].upcase , files.upcase, @gitinfo['log']
     end
     reinit
   end
