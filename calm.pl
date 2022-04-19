@@ -26,7 +26,7 @@ say "Calm output" ;
 my $direction = 0 ; # initially don't print
 while (<>) {
     #These affect following line
-    if (/CALM Helpline/ || /helpline member/)  {
+    if (/^CALM Helpline$/ || /helpline member/)  {
        $direction = 1 ;
        #print Dumper $direction ;
        next ;
@@ -35,9 +35,10 @@ while (<>) {
     next if /^\d\d:\d\d/ ; # TODO preserve time
     s/'/''/g ;  # apostrophes mess up the colouring (bodge)
 
-    # I rarely use WE or YOU but they do... 
+    # I rarely use WE or YOU but they do...
+    #  (workround if the "calm Helpline text isnt present")
     if ( /\bwe\b/ix || /\b you r? \b/ix ) {
-      $direction = 1 ;
+      # $direction = 1 ;
     }
 
     if ($direction) {
