@@ -6,7 +6,7 @@ class AckType
     # ack -f --show-types returns lines
     #    filename => type
     types_string = `ack -f --show-types #{directory}`
-    pp types_string
+    #pp types_string
     (types_string.split"\n" )
      .map{|x| x.split(' => ')}
      .group_by{|y| y[1]}
@@ -14,14 +14,18 @@ class AckType
 
 
   end
-  def self.get_type_counts ( typearray )
+  def self.print_type_counts ( typearray )
     typearray.each do |t,keyarr|
-      puts t,keyarr.count
+      printf "                 %-10s %d\n", t, keyarr.count
     end
   end
 end
 
-dir = ARGV.shift
-type_hash = AckType.get_type_array ( dir)
-t = AckType.get_type_counts type_hash
-binding.pry
+# call from pry
+def t dir
+  #dir = ARGV.shift
+  type_hash = AckType.get_type_array ( dir)
+  t = AckType.print_type_counts type_hash
+  #binding.pry
+  return 1
+end
