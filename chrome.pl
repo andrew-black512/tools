@@ -22,6 +22,7 @@ my %sites = (
   fg => 'www.flickr.com/groups/plot94/' ,
   fr => 'www.flickr.com/cameraroll/' ,
   g => 'www.google.com' ,
+  gmx => 'gmx.co.uk' ,
   c => 'www.thecalmzone.net/help/webchat/' ,
   ch => 'mail.google.com/chat/u/0/#chat/dm/tAjbzgAAAAE' ,
   l  => 'docs.google.com/spreadsheets/d/1lVMNAgCsiAaKcMG3sTG-d4XHi_Fod97I0IhqLxz7ssY' ,
