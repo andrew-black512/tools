@@ -108,19 +108,21 @@ file = ARGV.shift
 start_page = ARGV.shift.to_i
 finish_page = ARGV.shift.to_i
 ## TODO: check arg (raise error)
+# TODO: make finish > size of document => print remainder..
+# # TODO: odd page => only a warmomg and/or blank page
 puts "#{start_page} #{finish_page} "
 
 puts "Tidy up - TODO use ruby"
 mysys "rm p* -v"
-mysys "rm a.pdf"
-mysys "rm b.pdf"
+mysys "rm aa_*.pdf"
+mysys "rm bb_*.pdf"
 puts ""
 
 r = PageRange.new( start_page , finish_page )
 format='p%02d '
 mysys "pdfseparate #{r.extract} #{file} #{format}"
-mysys " pdfunite #{r.print_odd_pages} a.pdf"
-mysys " pdfunite #{r.print_even_pages} b.pdf"
+mysys " pdfunite #{r.print_odd_pages} aa_.pdf"
+mysys " pdfunite #{r.print_even_pages} bb_.pdf"
 
-mysys 'gnome-open a.pdf'
-mysys 'gnome-open b.pdf'
+mysys 'gnome-open aa_.pdf'
+mysys 'gnome-open bb_.pdf'
