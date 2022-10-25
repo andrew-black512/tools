@@ -21,7 +21,7 @@ def comma_join_test
 end
 def expandf_test
   #puts ['a'].comma_join
-  puts ([1 , 2 ,10] ).expandf ("p%02d ")
+  puts ([1 , 2 ,10] ).expandf ("%02d ")
   #puts [].comma_join
 
 end
@@ -42,7 +42,7 @@ class PageRange
 
       @start_page = s
       @range = (s..e)
-      @format='p%02d '
+      @format='%02d '
     else
       puts "Invalid start (either 1 or even number)"
       exit
@@ -113,16 +113,16 @@ finish_page = ARGV.shift.to_i
 puts "#{start_page} #{finish_page} "
 
 puts "Tidy up - TODO use ruby"
-mysys "rm p* -v"
+##mysys "rm p* -v"
 mysys "rm aa_*.pdf"
 mysys "rm bb_*.pdf"
 puts ""
 
 r = PageRange.new( start_page , finish_page )
-format='p%02d '
-mysys "pdfseparate #{r.extract} #{file} #{format}"
-mysys " pdfunite #{r.print_odd_pages} aa_.pdf"
-mysys " pdfunite #{r.print_even_pages} bb_.pdf"
+format='%02d '
+##mysys "pdfseparate #{r.extract} #{file} #{format}"
+mysys "pdftk #{file} cat #{r.print_odd_pages} output aa_.pdf"
+mysys "pdftk #{file} cat #{r.print_even_pages} output bb_.pdf"
 
 mysys 'gnome-open aa_.pdf'
 mysys 'gnome-open bb_.pdf'
