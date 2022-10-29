@@ -119,6 +119,7 @@ mysys "rm bb_*.pdf"
 puts ""
 
 # This is evolved via using  pdfseparate  and pdfunite 
+#  pdftk would have been better choice.
 
 r = PageRange.new( start_page , finish_page )
 mysys "pdftk #{file} cat #{r.print_odd_pages} output aa_.pdf"
