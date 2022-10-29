@@ -113,14 +113,14 @@ finish_page = ARGV.shift.to_i
 puts "#{start_page} #{finish_page} "
 
 puts "Tidy up - TODO use ruby"
-##mysys "rm p* -v"
+
 mysys "rm aa_*.pdf"
 mysys "rm bb_*.pdf"
 puts ""
 
+# This is evolved via using  pdfseparate  and pdfunite 
+
 r = PageRange.new( start_page , finish_page )
-format='%02d '
-##mysys "pdfseparate #{r.extract} #{file} #{format}"
 mysys "pdftk #{file} cat #{r.print_odd_pages} output aa_.pdf"
 mysys "pdftk #{file} cat #{r.print_even_pages} output bb_.pdf"
 
