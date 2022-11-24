@@ -1,6 +1,10 @@
 #!/usr/bin/ruby
 require 'fileutils'
 
+# TODO
+#   - tidy glob (eg .TXT - *.TXT)
+#   - allow different formats
+
 def createdir (dirname)
     #
     if ! Dir.exist?(dirname)
