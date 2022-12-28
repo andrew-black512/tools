@@ -20,11 +20,16 @@ use File::Spec ;
 
 #--------
 sub open_merge {
-     open(my $FH, "<", $filname)
-                    or die "Can't open < $filename: $!";
-
-
+    my $fh=shift ;
+    my $time=shift ;
 }
 #--------
 my $merge_file = shift ;
+open(my $FH, "<", $merge_file)
+                    or die "Can't open '$merge_file' : $!" ;
 
+while (<> ) {
+    if (/^ ( \d\d:\d\d ) /x ) {
+        say $1 ;
+    }
+}
