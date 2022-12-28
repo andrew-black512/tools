@@ -19,9 +19,11 @@ use Data::Dumper ;
 use File::Spec ;
 
 #--------
-sub open_merge {
+my $lastline ;
+sub merge_in {
     my $fh=shift ;
     my $time=shift ;
+    say "Merge in $time"
 }
 #--------
 my $merge_file = shift ;
@@ -30,6 +32,6 @@ open(my $FH, "<", $merge_file)
 
 while (<> ) {
     if (/^ ( \d\d:\d\d ) /x ) {
-        say $1 ;
+        merge_in $FH, $1 
     }
 }
