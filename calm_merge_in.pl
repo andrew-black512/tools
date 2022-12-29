@@ -23,7 +23,14 @@ my $lastline ;
 sub merge_in {
     my $fh=shift ;
     my $time=shift ;
-    say "Merge in $time"
+    say "Merge in $time" ;
+    $lastline = <$fh> unless $lastline ;
+    #say $lastline ;
+    while(  $lastline lt $time )
+    {
+        print $lastline  ;
+        $lastline = <$fh>
+    }
 }
 #--------
 my $merge_file = shift ;
