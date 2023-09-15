@@ -15,7 +15,10 @@
 use strict ;
 use warnings ;
 use feature ":5.10" ;   
-use Data::Dumper ;
 
-
+say "#------------------------------" ;
+while (<>) {
+    s/^\s*\d+/#/ ;
+    print ;
+}
 
