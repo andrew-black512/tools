@@ -18,7 +18,7 @@ use feature ":5.10" ;
 use Data::Dumper ;
 
 #--------
-my $lastline ;
+my $lastline='' ;
 sub merge_in {
     my $fh=shift ;
     my $time=shift ;
