@@ -14,9 +14,18 @@ def createdir (dirname)
 end
 
 
+#---------------------------------------------------------------------------
+def helpandexit
+    puts "please give a pair of stations EDW::LBG"
+    exit
+end
+#---------------------------------------------------------------------------
 
+helpandexit if ARGV.count == 0 
 fileglob = ARGV.shift
-format = '%Y_%m'
+
+format = ARGV.count == 1 ? ARGV.shift  :   '%Y_%m_%d'
+
 Dir.glob(fileglob).each do |filename|
    f=File.new filename
    dirname = f.mtime.strftime( format )  # _%d configurable?s
