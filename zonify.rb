@@ -8,7 +8,7 @@ require 'fileutils'
 def createdir (dirname)
     if ! Dir.exist?(dirname)
         puts "create #{dirname}"
-        Dir.mkdir(dirname) 
+        FileUtils.mkdir_p(dirname) 
     end
 
 end
