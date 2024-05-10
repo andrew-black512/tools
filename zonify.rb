@@ -16,8 +16,8 @@ end
 
 #---------------------------------------------------------------------------
 def helpandexit
-    puts "please give a pair of stations EDW::LBG"
-    exit
+    puts "zoneify.rb  filemask [format]"
+    exitt. 
 end
 #---------------------------------------------------------------------------
 
