@@ -2,7 +2,7 @@
 # TODO:  Make filename date dependent.
 
 require "clipboard"
-loglocation = '/home/andrew/work/mailwork/collect_202305.txt'
+loglocation = '/home/andrew/work/mailwork/collect_lt_202405.txt'
 
 # TODO P1 not part 
 password =  ARGV.join('') 
