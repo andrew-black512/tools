@@ -16,9 +16,19 @@ end
 
 #---------------------------------------------------------------------------
 def helpandexit
-    puts "zoneify.rb  filemask [format]"
+    puts <<HELP 
+    
+    zoneify.rb  filemask [format]
+        (remember to quote regep)
+        
+HELP
     exit
 end
+#---------------------------------------------------------------------------
+formats = {
+    'ymd' =>  '%Y_%m_%d' ,
+    'yw'  =>  '%Y_w%V'   ,
+}
 #---------------------------------------------------------------------------
 
 helpandexit if ARGV.count == 0 
