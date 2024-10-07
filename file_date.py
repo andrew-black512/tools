@@ -3,7 +3,6 @@ import argparse
 import sys
 from datetime import timedelta,datetime
 
-# abs makes -n same as n (as in find -mtime)
 numargs = len(sys.argv)-1
 if numargs >= 1:
     #number of days forward - default today
@@ -14,7 +13,9 @@ now = datetime.now()
 prefix="DF "   # TODO
 
 earlier_date = now + timedelta(earlier)
-et = earlier_date.strftime("DF %Y-%m-%d ")
+et = earlier_date.strftime("DF %d-%m-%Y ")
 #if ???????
 
 print (et)
+# TODO - send to clipboard
+# TODO - also send full date to sysout
