@@ -17,16 +17,18 @@ if numargs >= 1:
 else:
     earlier = 0  ### prefer to say None or nil
     print("""
-      Please give time offset 0= today, +=future
+          file_date.py  offset [prefix]
+            offset 0= today, +ve future
           """
           ) 
     exit
 now = datetime.now()
 
 earlier_date = now + timedelta(earlier)
-et = earlier_date.strftime("DF %d-%m-%Y ")
+et = earlier_date.strftime("%d-%m-%Y ")
+text = F"{prefix} {et}"
 
 
-print (et)
+print (text)
 # TODO - send to clipboard
 # TODO - also send full date to sysout
