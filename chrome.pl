@@ -26,6 +26,7 @@ my %sites = (
   c => 'www.thecalmzone.net/help/webchat/' ,
   ch => 'mail.google.com/chat/u/0/#chat/dm/tAjbzgAAAAE' ,
   l  => 'docs.google.com/spreadsheets/d/1lVMNAgCsiAaKcMG3sTG-d4XHi_Fod97I0IhqLxz7ssY' ,
+  lil => 'docs.google.com/document/d/1o3-SYpuXJwNWHiOtHRmSy8J37mW_2bO6_Dsxl6BpVac/edit#', #lily ref
   m => 'mail.google.com/mail/u/0/#label/512Blank' ,
   rec => 'drive.google.com/drive/folders/0BybtFQ3kyI3RZl9DenRjSDFLTVU' ,
   ph => 'docs.google.com/document/d/192faOiM0Zso9LxjvT0CeZnC0FyUrXbwjVk0IqKahZ-o' ,
