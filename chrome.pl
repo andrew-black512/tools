@@ -37,10 +37,11 @@ my $site = $sites {$verb} ;
 say "verb=$verb site=$site" ;
 die unless $site ;
 
-my $command='chromium-browser --app=https://%s' ;
+
+my $command='google-chrome --app=https://%s' ;
 if ($site =~ /folders|flickr/) {
   # folders in drive are better in a window with tabs.
-  $command='chromium-browser %s' ;
+  $command='google-chrome %s' ;
 
 }
 say $command ;
