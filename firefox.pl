@@ -23,9 +23,11 @@ use File::Spec ;
 
 my %sites = (
   c => 'www.thecalmzone.net/help/webchat/' ,
+  bl => 'explore.bl.uk/primo_library/libweb/action/search.do' ,
   cow => 'www.meetup.com/Write-More-Swiss-Cottage-Library-Writing-Group/events' ,
   g => 'www.google.com' ,
   nev =>  'http://www.neverssl.com/' ,  #TODO wont work
+  aaisp => 'https://control.aa.net.uk/editnumber.cgi#incoming' ,
 ) ;
 my $verb = shift ;
 my $site = $sites {$verb} ;
