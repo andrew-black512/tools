@@ -1,12 +1,14 @@
-/home/andrew/Pictures/Screenshots
- 2131  zoneify.rb 
- 2132  zonify.rb 
- 2133  ls
- 2134  despace.pl *
- 2135  ls
- 2136  zonify.rb *.png
- 2137  zonify.rb \*.png
- 2138  cd *15
+#!/usr/bin/bash
+
+set -e
+set -x
+cd /home/andrew/Pictures/Screenshots
+   despace.pl *.png
+exit
+
+2137  zonify.rb \*.png
+ 2145  despace.pl *.png
+ddd 2138  cd *15
  2139  gno.
  2140  xdg.
  2141  pwd
