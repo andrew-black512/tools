@@ -1,9 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+
 import argparse
 import sys
 from datetime import timedelta,datetime
+import clipboard
+
 
 def put_clipboard(txt):
+    print( F"CLIP:{txt}")
+    clipboard.copy(txt)
     return 0
     
 
@@ -29,6 +34,6 @@ et = earlier_date.strftime("%d-%m-%Y ")
 text = F"{prefix} {et}"
 
 
-print (text)
+put_clipboard (text)
 # TODO - send to clipboard
 # TODO - also send full date to sysout
