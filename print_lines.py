@@ -14,8 +14,10 @@ def print_first_n_lines(filename, N):
         with open(filename, 'r') as f:
             print(f"{filename}:")
             lines = f.readlines()[:N]
+            n = 1
             for line in lines:
-                print(f"   {line}", end='')
+                print(f"  {n:2}  {line}", end='')
+                n = n + 1
             print("")
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
