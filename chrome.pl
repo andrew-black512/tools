@@ -34,6 +34,12 @@ my %sites = (
 ) ;
 my $verb = shift ;
 my $site = $sites {$verb} ;
+
+unless ($site) {
+  print "keys are \n   " ;
+  say join "  ", sort keys(%sites) ; 
+  exit ;
+}
 say "verb=$verb site=$site" ;
 die unless $site ;
 
