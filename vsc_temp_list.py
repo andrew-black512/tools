@@ -2,13 +2,12 @@
 
 import json
 import argparse
+""" Sumaries a VSC template file"""
 
 def walk_data(data) :
     for x in data :
-        print()
         scdata = data[x]
-        print(f" {scdata['prefix']:20}  {scdata['description']} ")
-
+        print(f"    {scdata['prefix']:20}  {scdata['description']} ")
 
 def reformat_json_file(input_filepath):
     """
@@ -27,14 +26,16 @@ def reformat_json_file(input_filepath):
     except json.JSONDecodeError:
         print(f"Error: Could not decode JSON from {input_filepath}. Please ensure it's a valid JSON file.")
         return
-
+    print(f"")
+    print(f"{input_filepath} ")
     walk_data(data)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Reformat a JSON file for better readability.")
-    parser.add_argument("input", help="Path to the input JSON file.")
+    parser.add_argument("input", nargs="+", help="Path to the input JSON file.")
     
     args = parser.parse_args()
 
-    reformat_json_file(args.input )
+    for filename in args.input :
+        reformat_json_file( filename )
