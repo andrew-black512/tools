@@ -6,11 +6,7 @@ import argparse
 def walk_data(data) :
     for x in data :
         print()
-        print(f" x = {x} ")
-        #for a in x :
-        #    print(f"     a = {a} ")
         scdata = data[x]
-        print(scdata)
         print(f" {scdata['prefix']:20}  {scdata['description']} ")
 
 
@@ -31,7 +27,6 @@ def reformat_json_file(input_filepath):
     except json.JSONDecodeError:
         print(f"Error: Could not decode JSON from {input_filepath}. Please ensure it's a valid JSON file.")
         return
-    print(f" data = {data} ")
 
     walk_data(data)
 
