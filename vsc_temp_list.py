@@ -23,8 +23,9 @@ def reformat_json_file(input_filepath):
     except FileNotFoundError:
         print(f"Error: Input file not found at {input_filepath}")
         return
-    except json.JSONDecodeError:
-        print(f"Error: Could not decode JSON from {input_filepath}. Please ensure it's a valid JSON file.")
+    except json.JSONDecodeError as e:
+        print(f"Error: Could not decode JSON from {input_filepath}. ")
+        print(f"Error position: line {e.lineno}, column {e.colno}")
         return
     print(f"")
     print(f"{input_filepath} ")
