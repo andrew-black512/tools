@@ -54,8 +54,8 @@ use POSIX qw/strftime/ ;
 use File::Find::Rule ;
 use feature ":5.10" ;
 
-
-my $editor = "jedit" ;
+# Semi config
+my $editor = "gedit" ;
 my $term_reg = qr/^ \.\. $/x ;
 
 use vars qw/%command_options/ ;
