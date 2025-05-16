@@ -112,7 +112,7 @@ if ( $cat )
 	my $configcat = $$config {'file'} { $cat } ;
 	if ( defined $configcat ) {
 	  $cat = $configcat ;
-	  say "Using shortcut file $configcat" ;
+	  say "Using shortcut file '$configcat'" ;
     } else {
 	$cat = getcat ( $cat) ;
     }
@@ -305,11 +305,14 @@ my $config_file =  $ENV{HOME} . '/dist.ini';
     	s/#.*// ;
         next if /^\s*$/ ;
     	chomp;
+		
         my ($cat, $file) = split /:/ ;
+		$cat =~ s/\s//g     ;   # ignore spaces around key
         $file =~ s/^\s+//  ;
         $file =~ s/\s+$//  ;
         $file =~ s/~/ $ENV{HOME} /e ;
-        $$config {'file'} { $cat } = $file ;
+        ##say "Read $cat, $file" ;
+		$$config {'file'} { $cat } = $file ;
 
     }
 
