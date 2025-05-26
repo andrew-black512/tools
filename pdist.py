@@ -137,8 +137,8 @@ def main():
 
     # Determine if we need to prompt for input (i.e., no text provided on command line)
     if not args.text:
-        print(f"Entering interactive mode for '{filepath}'. Type your notes, press Enter for new line.")
-        print("To finish, press Ctrl+D (or Ctrl+Z then Enter on Windows), or enter an empty line.")
+        print(f"Entering interactive mode for '{filepath}'.")
+        print("To finish, press Ctrl+D or enter an empty line.")
         first_line_written = False
         while True:
             try:
