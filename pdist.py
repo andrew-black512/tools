@@ -20,9 +20,6 @@ def write_to_file(filepath, text, mode='w'):
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, mode, encoding='utf-8') as f:
             f.write(text)
-        # Print success message only if actual content was written
-        if text:
-            print(f"Successfully wrote to '{filepath}' in '{'append' if mode == 'a' else 'write'}' mode.")
     except IOError as e:
         print(f"Error writing to file '{filepath}': {e}")
 
