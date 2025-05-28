@@ -106,6 +106,10 @@ def main():
 
     filepath = os.path.join(notes_directory, args.file)
 
+    if args.print:
+        read_file_content(filepath)
+        return # having printed without asking for input
+
     if args.delete:
         try:
             if os.path.exists(filepath):
@@ -174,8 +178,6 @@ def main():
             text_to_write += '\n'
         write_to_file(filepath, text_to_write, initial_mode)
 
-    if args.print:
-        read_file_content(filepath)
 
 if __name__ == "__main__":
     main()
