@@ -5,6 +5,12 @@ import argparse
 import os
 import sys # Import sys for checking if stdin is a TTY (optional, but good practice for interactive input)
 
+def call_editor(editor, filepath) :
+    command = f"{editor} {filepath}"
+    os.system( command )
+
+#----------------------------------------------------------------------
+
 def write_to_file(filepath, text, mode='w'):
     """
     Writes the given text to the specified file path.
@@ -118,6 +124,7 @@ def main():
         return # having printed without asking for input
     if args.edit:
         print(f"call {args.edit}")
+        call_editor(args.edit, filepath)
         return # without asking for input
 
     if args.delete:
