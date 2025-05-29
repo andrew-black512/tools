@@ -92,6 +92,13 @@ def main():
         default=os.path.join(os.path.expanduser("~"), "notes"), # Default to ~/notes
         help="Specify the base directory for notes. Defaults to '~/notes/'."
     )
+    parser.add_argument(
+        "-e", "--edit",
+        nargs="?",  # Makes the argument optional, and if present, the value is optional
+        const="gedit",  # Value if --edit is present but no value is given (e.g., --edit)
+        default=None,  # Default value if --edit is not present at all
+        help="Specify an editor. Defaults to 'gedit'"
+    )
 
     args = parser.parse_args()
 
@@ -109,6 +116,9 @@ def main():
     if args.print:
         read_file_content(filepath)
         return # having printed without asking for input
+    if args.edit:
+        print(f"call {args.edit}")
+        return # without asking for input
 
     if args.delete:
         try:
