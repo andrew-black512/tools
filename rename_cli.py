@@ -39,17 +39,17 @@ def main():
         help='One or more files to rename. Use shell expansion like *.txt, *.jpg, etc.'
     )
     parser.add_argument(
-        '--prefix',
+        '-p', '--prefix',
         type=str,
         help='Add a string prefix to the new filename.'
     )
     parser.add_argument(
-        '--suffix',
+        '-s', '--suffix',
         type=str,
         help='Add a string suffix to the new filename before the extension.'
     )
     parser.add_argument(
-        '--dry-run',
+        '-n', '--dry-run',
         action='store_true',
         help='Show what would be renamed without actually performing the rename operation.'
     )
