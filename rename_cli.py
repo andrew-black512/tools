@@ -19,11 +19,11 @@ def process_filename(filename, prefix=None, suffix=None):
 
     # Add prefix if provided
     if prefix:
-        new_name = f"{prefix}-{new_name}"
+        new_name = f"{prefix}_{new_name}"
 
     # Add suffix if provided
     if suffix:
-        new_name = new_name + suffix
+        new_name = f"{new_name}_{suffix}"
 
     return new_name + ext
 
