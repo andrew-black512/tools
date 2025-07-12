@@ -11,6 +11,7 @@ options = {
     :domain => 'andrew.black1.org.uk',
     :comment => '' ,
 }
+
 OptionParser.new do |opts|
    opts.banner = "Usage: paste_email.rb  email with space .... "
 
