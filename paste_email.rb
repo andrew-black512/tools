@@ -14,9 +14,9 @@ options = {
 OptionParser.new do |opts|
    opts.banner = "Usage: paste_email.rb  email with space .... "
 
-   opts.on("-f","--file FILE","Give filenameTODO" ) do |file|
-     puts "Given file"
-     options[:file]=file
+   opts.on("-f","--comment COMMENT","Give comment" ) do |comment|
+     puts "Given comment"
+     options[:comment]=comment
    end
 
    opts.on("-r", "--reverse", "Reverse direction") do |v|
@@ -46,8 +46,8 @@ puts "Clipboard : #{Clipboard.paste}"
 puts
 
 begin
-   file=File.open(loglocation, 'a')
-   file.printf("%s,\n",  email_address) 
+   comment=File.open(loglocation, 'a')
+   comment.printf("%s,%s\n",  email_address,options[:comment]) 
 end
 
 
