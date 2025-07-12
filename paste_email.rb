@@ -19,11 +19,7 @@ OptionParser.new do |opts|
      options[:comment]=comment
    end
 
-   opts.on("-r", "--reverse", "Reverse direction") do |v|
-       options[:reverse] = v
-   end
    opts.on("-d","--domain ","Give email domain" ) do |d|
-      puts "Given file"
       options[:domain]=d
    end
 
