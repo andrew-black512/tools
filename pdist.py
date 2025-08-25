@@ -159,7 +159,8 @@ def main():
     # Determine if we need to prompt for input (i.e., no text provided on command line)
     if not args.text:
         print(f"Entering interactive mode for '{filepath}'.")
-        print("To finish, press Ctrl+D or enter an empty line.")
+        endline = ".."
+        print(f"To finish, press Ctrl+D or enter {endline}")
         first_line_written = False
         while True:
             try:
@@ -175,8 +176,8 @@ def main():
                 print("\nEOF received. Finishing input.")
                 break # Exit on Ctrl+D
 
-            if not line.strip(): # Check for empty line after stripping whitespace
-                print("Empty line received. Finishing input.")
+            if  line == endline: # Check for empty line after stripping whitespace
+                print("endline received. Finishing input.")
                 break
 
             # Ensure each line ends with a newline character for proper file formatting
