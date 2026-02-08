@@ -28,8 +28,9 @@ def process_files(instruction_file, dry_run=False):
             line = line.strip()
             if not line or line.startswith("#"): continue 
 
-            parts = line.split(" ", 2)
+            parts = line.split()
             verb = parts[0].upper()
+            print(f'v={verb}')
 
             for filename in os.listdir(DOWNLOADS_PATH):
                 file_path = os.path.join(DOWNLOADS_PATH, filename)
@@ -63,6 +64,7 @@ def process_files(instruction_file, dry_run=False):
                         break
                     
                     search_pattern, replacement = parts[1], parts[2]
+                    #print (f's{search_pattern} {filename}')
                     if re.search(search_pattern, filename):
                         new_name = re.sub(search_pattern, replacement, filename)
                         action_msg = f"REN: {filename} -> {new_name}"
