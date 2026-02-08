@@ -1,0 +1,3 @@
+#DELP delp.tmp
+#DEL  del.tml
+REN  (.*-202.-music-list).pdf swk-\1.pdf
