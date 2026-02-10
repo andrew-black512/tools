@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-
+"""
+TODO  review wether download should be hardcoded.
+  location of log
+  separate out test cases
+"""
 import os
 import re
 import argparse
