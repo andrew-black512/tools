@@ -5,9 +5,9 @@ import argparse
 """ Sumaries a VSC template file"""
 
 def walk_data(data) :
-    for x in data :
-        scdata = data[x]
-        print(f"    {scdata['prefix']:20}  {scdata['description']} ")
+    for snip_key in data :
+        scdata = data[snip_key]
+        print(f"    {scdata['prefix']:10} {snip_key:30} {scdata['description']} ")
 
 def reformat_json_file(input_filepath):
     """
@@ -27,9 +27,9 @@ def reformat_json_file(input_filepath):
         print(f"Error: Could not decode JSON from {input_filepath}. ")
         print(f"Error position: line {e.lineno}, column {e.colno}")
         return
-    print(f"")
-    print(f"{input_filepath} ")
+    print(f"  {input_filepath} ")
     walk_data(data)
+    print(f"")
 
 
 if __name__ == "__main__":
