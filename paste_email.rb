@@ -38,6 +38,7 @@ pp options if options[:verbose]
 base = '@' +  options[:domain]
 email_address =  ARGV.join('') 
 email_address << base unless email_address.include?("@")
+
 Clipboard.copy email_address
 puts
 puts "Clipboard : #{Clipboard.paste}"
