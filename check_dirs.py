@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""
+Checks exsitance of directories, eg form bookmarks.dat
+"""
 import csv
 import os
 import sys
