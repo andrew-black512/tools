@@ -3,29 +3,30 @@ dissolve.html
 check_dirs.py*
 vsc_temp_list.py*
 lsd.sh*
-old/
+  old/
+delibereate_false_match
+
 paste_email.rb*
+paste_email.txt  list of emails used by the above.
+
 test/
 rename_files.py*
 in/
 inprog/
 file_date.py*
-paste_email.txt
 get_delivered.py
-INBOX
-knit/
+INBOX  ???
+knit/   tools associated with knitting
 pdftools/
-pdist.py*
+pdist.py*  dist program in python
 rename_dif.txt
 rename_cli_ac.py
 rename_cli.py*
 update_gen.sh*
 lineattime.py*
-dist_proto_doc.txt
 dist_doc.tsv*
 distn.pl*
 dist.pl*
-q
 sum_dir.py
 ping_host.py
 git_mk_branch.sh*
