@@ -6,11 +6,13 @@ lsd.sh*
   old/
 delibereate_false_match
 
+rename_files.py
+check_filelist.py*
+
 paste_email.rb*
 paste_email.txt  list of emails used by the above.
 
 test/
-rename_files.py*
 in/
 inprog/
 file_date.py*
@@ -127,3 +129,4 @@ chat_emul.pl*
 last_dir.rb*
 index.html
 mod_grep.pl*
+.gitignore
