@@ -28,6 +28,7 @@ my %sites = (
   l  => 'docs.google.com/spreadsheets/d/1lVMNAgCsiAaKcMG3sTG-d4XHi_Fod97I0IhqLxz7ssY' ,
   lil => 'docs.google.com/document/d/1o3-SYpuXJwNWHiOtHRmSy8J37mW_2bO6_Dsxl6BpVac/edit#', #lily ref
   m => 'mail.google.com/mail/u/0/#label/512Blank' ,
+  nerd => 'quad.nerdlegame.com/game',
   rec => 'drive.google.com/drive/folders/0BybtFQ3kyI3RZl9DenRjSDFLTVU' ,
   ph => 'docs.google.com/document/d/192faOiM0Zso9LxjvT0CeZnC0FyUrXbwjVk0IqKahZ-o' ,
   track => 'drive.google.com/drive/folders/1ofvnef_DgEeNbXM9hlih2btEPENrTN54' ,
