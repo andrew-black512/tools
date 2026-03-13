@@ -48,6 +48,6 @@ for l in sorted(my_dict):
     for clue in clue_list:
         print (f"   ,{clue}" )
         ct += 1
-    count_this_len = count(clue_list)
-    print  (f"   ,ct leng=,{count_this_len}" )
+    count_this_len = len(clue_list)
+    print  (f"   ,ct leng={l},{count_this_len}" )
 print ( f"ct = {ct}")
