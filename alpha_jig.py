@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+
 """
-Takes a file jogclue.txt extracted from PDF file for a 
+Takes a file jigclue.txt extracted from PDF file for a 
 jigsaw crossword.
+It adds up numbers in ( )   
 
 TODO
 - use a better regexp (re module)
